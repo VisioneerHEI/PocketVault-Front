@@ -16,6 +16,8 @@ jobs:
     name: Super-Linter
     runs-on: ubuntu-latest
 
+    permissions: read-all
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
