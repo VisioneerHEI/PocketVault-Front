@@ -10,13 +10,13 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - prod
       - preprod
+	  
+permissions: read-all
 
 jobs:
   build:
     name: Super-Linter
     runs-on: ubuntu-latest
-
-    permissions: read-all
 
     steps:
       - name: Checkout code
