@@ -1,4 +1,5 @@
-name: Linter
+---
+name: Super-Linter
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -18,8 +19,7 @@ jobs:
     permissions:
       contents: read
       packages: read
-      # To report GitHub Actions status checks
-      statuses: write
+      statuses: read
 
     steps:
       - name: Checkout code
