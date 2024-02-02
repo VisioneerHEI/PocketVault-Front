@@ -13,13 +13,8 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   build:
-    name: Lint
+    name: Super-Linter
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: read
-      packages: read
-      statuses: read
 
     steps:
       - name: Checkout code
