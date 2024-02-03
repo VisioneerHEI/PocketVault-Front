@@ -1,7 +1,7 @@
 import { Flex, Input, Text } from "@chakra-ui/react";
 
 const Form = ({name, additional, inputs, reverse}) => {
-    const a = "70%"
+    const a = "40%"
     return (
         <Flex
             flexDir={!reverse ? "row" : "row-reverse"}
@@ -35,7 +35,9 @@ const Form = ({name, additional, inputs, reverse}) => {
                 w={a}
                 borderRadius={"20px"}
                 padding={"20px 0px 20px 0"}
-                >{inputs}</Flex>
+                >
+                    {inputs}
+                </Flex>
         </Flex>
     )
 };
