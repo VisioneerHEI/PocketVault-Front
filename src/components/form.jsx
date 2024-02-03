@@ -1,7 +1,6 @@
 import { Flex, Input, Text } from "@chakra-ui/react";
-import InputForm from "./inputForm";
 
-const LoginForm = () => {
+const Form = ({name, additional, inputs}) => {
     const a = "70%"
     return (
         <Flex
@@ -22,12 +21,8 @@ const LoginForm = () => {
                 w={`calc(100% - ${a})`}
                 borderRadius={"20px"}
                 >
-                <Text
-                    fontSize={"4em"}
-                    >
-                    Login
-                </Text>
-                <Text>If you want to create a new account <a href="/signUp">signUp</a></Text>
+                <Text fontSize={"4em"}>{name}</Text>
+                {additional}
             </Flex>
             <Flex
                 flexDir={"column"}
@@ -39,13 +34,9 @@ const LoginForm = () => {
                 w={a}
                 borderRadius={"20px"}
                 padding={"20px 0px 20px 0"}
-                >
-                <InputForm placeholder={"account"} />
-                <InputForm placeholder={"password"} />
-                <Input type={"button"}  w={"150px"} h={"50px"} value={"Login"} />
-            </Flex>
+                >{inputs}</Flex>
         </Flex>
     )
 };
 
-export default LoginForm;
+export default Form;

@@ -1,5 +1,6 @@
-import { Flex } from "@chakra-ui/react";
-import LoginForm from "./components/loginForm";
+import { Flex, Input, Text } from "@chakra-ui/react";
+import Form from "../../components/form";
+import InputForm from "../../components/inputForm";
 
 const Login = () => {
     return (
@@ -10,7 +11,17 @@ const Login = () => {
             justifyContent={"center"}
             alignItems={"center"}
             >
-                <LoginForm />
+                <Form
+                    name={"Login"}
+                    additional={<Text>If you want to create a new account <a href="/signUp">signUp</a></Text>}
+                    inputs={
+                        <>
+                            <InputForm placeholder={"account"} />
+                            <InputForm placeholder={"password"} />
+                            <Input type={"button"}  w={"150px"} h={"50px"} value={"Login"} />
+                        </>
+                    }
+                />
         </Flex>
     )
 };
