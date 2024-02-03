@@ -1,9 +1,10 @@
 import { Flex, Input, Text } from "@chakra-ui/react";
 
-const Form = ({name, additional, inputs}) => {
+const Form = ({name, additional, inputs, reverse}) => {
     const a = "70%"
     return (
         <Flex
+            flexDir={!reverse ? "row" : "row-reverse"}
             justifyContent={"space-around"}
             alignItems={"center"}
             border={"1px black solid"}
