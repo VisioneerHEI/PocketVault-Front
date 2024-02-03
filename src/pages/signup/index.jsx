@@ -1,8 +1,14 @@
 import { Flex, Input, Text } from "@chakra-ui/react";
 import Form from "../../components/form";
 import InputForm from "../../components/inputForm";
+import useInput from "../../hooks/useInput";
 
 const SignUp = () => {
+    const [name, setName, modifyName] = useInput("");
+    const [mail, setMail, modifyMail] = useInput("");
+    const [password, setPassword, modifyPassword] = useInput("");
+    const [confirmPassword, setConfirmPassword, modifyConfirmPassword] = useInput("");
+
     return (
         <Flex
         w={"100vw"}
