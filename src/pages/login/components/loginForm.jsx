@@ -40,8 +40,8 @@ const LoginForm = () => {
                 borderRadius={"20px"}
                 padding={"20px 0px 20px 0"}
                 >
-                <InputForm />
-                <InputForm />
+                <InputForm placeholder={"account"} />
+                <InputForm placeholder={"password"} />
                 <Input type={"button"}  w={"150px"} h={"50px"} value={"Login"} />
             </Flex>
         </Flex>
