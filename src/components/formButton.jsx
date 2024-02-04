@@ -1,6 +1,6 @@
 import { Input } from "@chakra-ui/react";
 
-const FormButton = ({value, backgroundColor, color}) => {
+const FormButton = ({value, backgroundColor, color, onClick}) => {
     return (
         <Input 
         type="button"
@@ -10,7 +10,8 @@ const FormButton = ({value, backgroundColor, color}) => {
         border="0"
         backgroundColor={backgroundColor}
         color={color}
-        fontFamily="monospace"/>
+        fontFamily="monospace"
+        onClick={onClick}/>
     )
 };
 

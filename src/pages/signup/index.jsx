@@ -18,7 +18,7 @@ const SignUp = () => {
 
     const submit = () => {
         if (!verify(password, confirmPassword)){
-            setError("The password is not the same different")
+            setError("Password error")
         }
     };
 

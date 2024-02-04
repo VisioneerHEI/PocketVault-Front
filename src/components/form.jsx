@@ -1,6 +1,5 @@
 import { Avatar, Flex, Input, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
-import InputForm from "./inputForm";
 
 import "./form.css"
 
@@ -72,7 +71,8 @@ const Form = ({name, additional, inputs, reverse, error}) => {
                 w="50%"
                 h="100%"
                 justifyContent="center"
-                alignItems="center">
+                alignItems="center"
+                flexDir="column">
                     <Flex
                         h="50%"
                         w="40%"
@@ -95,6 +95,19 @@ const Form = ({name, additional, inputs, reverse, error}) => {
                             w="80%">
                             Your favorite virtual wallet management application
                         </Text>
+                    </Flex>
+                    <Flex
+                        backgroundColor="red"
+                        w="20%"
+                        h={error ? "10%" : "0"}
+                        zIndex="1"
+                        borderRadius="0 0 1em 1em"
+                        justifyContent="center"
+                        alignItems="center"
+                        transition="all 1s"
+                        overflow="hidden">
+                        <Text
+                            textAlign="center">{error}</Text>
                     </Flex>
                 </Flex>
         </Flex>
