@@ -2,6 +2,7 @@ import { Flex, Input, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import Form from "../../components/form";
+import FormButton from "../../components/formButton";
 import InputForm from "../../components/inputForm";
 import useError from "../../hooks/useError";
 import useInput from "../../hooks/useInput";
@@ -34,7 +35,7 @@ const SignUp = () => {
             <Form
                 name={"SignUp"}
                 additional={
-                    <Text>If you want to connect to an another account <a href="/login">Login</a></Text>
+                    <Text fontSize="small">If you want to connect to an another account <a href="/login">Login</a></Text>
                 }
                 inputs={
                     <>
@@ -42,11 +43,10 @@ const SignUp = () => {
                         <InputForm placeholder={"mail"} onChange={modifyMail} />
                         <InputForm placeholder={"password"} onChange={modifyPassword} />
                         <InputForm placeholder={"confirm password"} onChange={modifyConfirmPassword} />
-                        <Input
-                            type={"button"}
-                            w={"150px"}
-                            h={"50px"}
+                        <FormButton
                             value={"Create"}
+                            backgroundColor="cyan"
+                            color="white"
                             onClick={submit}
                             />
                     </>

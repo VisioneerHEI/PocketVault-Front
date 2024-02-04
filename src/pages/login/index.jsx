@@ -1,5 +1,6 @@
 import { Flex, Input, Text } from "@chakra-ui/react";
 import Form from "../../components/form";
+import FormButton from "../../components/formButton";
 import InputForm from "../../components/inputForm";
 import useInput from "../../hooks/useInput";
 
@@ -17,12 +18,15 @@ const Login = () => {
             >
                 <Form
                     name={"Login"}
-                    additional={<Text>If you want to create a new account <a href="/signUp">signUp</a></Text>}
+                    additional={<Text fontSize="small"><a href="/signUp">Sign Up now</a></Text>}
                     inputs={
                         <>
-                            <InputForm placeholder={"account"} onChange={modifyAccount} />
-                            <InputForm placeholder={"password"} onChange={modifyPassword} />
-                            <Input type={"button"}  w={"150px"} h={"50px"} value={"Login"} />
+                            <InputForm placeholder="Email or UserName" onChange={modifyAccount} />
+                            <InputForm placeholder="Password" onChange={modifyPassword} />
+                            <FormButton 
+                                value="Login"
+                                backgroundColor="cyan"
+                                color="white"/>
                         </>
                     }
                 />
