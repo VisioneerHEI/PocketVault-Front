@@ -1,14 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import Router from './pages/Router';
-import { Flex } from '@chakra-ui/react';
+import './App.css'
+import Router from './pages/Router'
+import React, { Flex } from '@chakra-ui/react'
 
-function App() {
+function App () {
   return (
     <Flex>
       <Router />
     </Flex>
-  );
+  )
 }
 
-export default App;
+export default App

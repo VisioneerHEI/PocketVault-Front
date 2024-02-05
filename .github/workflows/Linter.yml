@@ -3,9 +3,9 @@ name: Super-Linter
 
 on:  # yamllint disable-line rule:truthy
   push:
-    branches: [ prod, preprod ]
+    branches: [prod, preprod]
   pull_request:
-    branches: [ prod, preprod ]
+    branches: [prod, preprod]
 permissions: read-all
 
 jobs:
