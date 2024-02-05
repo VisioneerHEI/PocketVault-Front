@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react'
 
 const useError = (init, timeout) => {
-    const [error, setError] = useState(init);
+  const [error, setError] = useState(init)
 
-    var time = setTimeout(()=>{
-        setError(init)
-    }, timeout)
+  const time = setTimeout(() => {
+    setError(init)
+  }, timeout)
 
-    return [error, setError]
-};
+  return [error, setError]
+}
 
-export default useError;
+export default useError
