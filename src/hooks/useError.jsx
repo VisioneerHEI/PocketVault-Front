@@ -3,7 +3,7 @@ import { useState } from 'react'
 const useError = (init, timeout) => {
   const [error, setError] = useState(init)
 
-  const time = setTimeout(() => {
+  setTimeout(() => {
     setError(init)
   }, timeout)
 

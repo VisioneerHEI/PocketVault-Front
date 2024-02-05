@@ -1,12 +1,12 @@
 import { Flex } from '@chakra-ui/react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ErrorPage from './Error'
 import Login from './login'
 import SignUp from './signup'
 
 const Router = () => {
-  const [error, setError] = useState(200)
+  const [error, ] = useState(200)
 
   return (
     <Flex>

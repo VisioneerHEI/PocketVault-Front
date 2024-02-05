@@ -1,4 +1,6 @@
+import React from 'react';
 import { Input } from '@chakra-ui/react'
+import PropTypes from 'prop-types';
 
 const InputForm = ({ placeholder, onChange }) => {
   return (
@@ -14,5 +16,10 @@ const InputForm = ({ placeholder, onChange }) => {
     />
   )
 }
+
+InputForm.propTypes = {
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+};
 
 export default InputForm

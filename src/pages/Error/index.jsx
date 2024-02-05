@@ -1,4 +1,6 @@
+import React from 'react';
 import { Flex, Text } from '@chakra-ui/react'
+import PropTypes from 'prop-types';
 
 const ErrorPage = ({ error_code }) => {
   return (
@@ -17,5 +19,9 @@ const ErrorPage = ({ error_code }) => {
     </Flex>
   )
 }
+
+ErrorPage.propTypes = {
+  error_code: PropTypes.string,
+};
 
 export default ErrorPage

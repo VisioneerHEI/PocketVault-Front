@@ -1,12 +1,13 @@
-import { Flex, Input, Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
+import React from 'react'
 import Form from '../../components/form'
 import FormButton from '../../components/formButton'
 import InputForm from '../../components/inputForm'
 import useInput from '../../hooks/useInput'
 
 const Login = () => {
-  const [account, setAccount, modifyAccount] = useInput('')
-  const [password, setPassword, modifyPassword] = useInput('')
+  const [, , modifyAccount] = useInput('')
+  const [, , modifyPassword] = useInput('')
 
   return (
     <Flex

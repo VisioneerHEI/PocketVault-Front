@@ -1,5 +1,5 @@
-import { Flex, Input, Text } from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
+import { Flex, Text } from '@chakra-ui/react'
+import React, { useEffect } from 'react'
 
 import Form from '../../components/form'
 import FormButton from '../../components/formButton'
@@ -9,10 +9,10 @@ import useInput from '../../hooks/useInput'
 import { verify } from '../../utils/password'
 
 const SignUp = () => {
-  const [name, setName, modifyName] = useInput('')
-  const [mail, setMail, modifyMail] = useInput('')
-  const [password, setPassword, modifyPassword] = useInput('')
-  const [confirmPassword, setConfirmPassword, modifyConfirmPassword] = useInput('')
+  const [, , modifyName] = useInput('')
+  const [, , modifyMail] = useInput('')
+  const [password, , modifyPassword] = useInput('')
+  const [confirmPassword, , modifyConfirmPassword] = useInput('')
 
   const [error, setError] = useError('', 5000)
 
