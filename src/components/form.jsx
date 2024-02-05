@@ -17,7 +17,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
       bgColor='white'
       boxShadow='.01em .01em 50em grey'
       borderRadius='1em'
-      className='toHidden'
+      className='to-hidden'
       position='relative'
     >
       <Flex
