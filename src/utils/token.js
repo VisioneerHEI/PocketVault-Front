@@ -8,7 +8,11 @@ export const save = (token) => {
 };
 
 export const get = () => {
-    return storage.getItem(tokenName);
+    let result = storage.getItem(tokenName);
+    if (!result && process.env.NODE_ENV === 'development'){
+        result = Math.random().toString();
+    }
+    return result;
 };
 
 export const dump = () => {
