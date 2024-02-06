@@ -6,7 +6,12 @@ on:  # yamllint disable-line rule:truthy
     branches: [prod, preprod]
   pull_request:
     branches: [prod, preprod]
-permissions: read-all
+    
+permissions:
+  actions: read
+  checks: read
+  # To report GitHub Actions status checks
+  statuses: write
 
 jobs:
   build:
@@ -24,6 +29,6 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter@v6.0.0  # x-release-please-version
         env:
-          DEFAULT_BRANCH: ${{ github.event.pull_request.base.ref }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
