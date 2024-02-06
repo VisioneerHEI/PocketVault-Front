@@ -12,7 +12,8 @@ const Main = () => {
             justifyContent="space-evenly"
             overflowX="hidden"
             margin="0"
-            padding="0">
+            padding="0"
+            paddingTop="80px">
                 <Card
                     h="500px">
                         <Card
@@ -35,6 +36,18 @@ const Main = () => {
                         <Card
                             display="t"></Card>
                 </Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
+                <Card></Card>
         </Flex>
     )
 };

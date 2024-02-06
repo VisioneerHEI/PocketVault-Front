@@ -6,7 +6,8 @@ const LeftBar = () => {
         <Flex
             bgColor="grey"
             h="100%"
-            w="20%">
+            w="20%"
+            zIndex="11">
             LeftBar
         </Flex>
     )
