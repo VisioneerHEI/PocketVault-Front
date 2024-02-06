@@ -15,7 +15,7 @@ const NavBar = () => {
             top="0"
             left="0"
             paddingTop="10px"
-            className="toBlur">
+            className="to-blur">
             <Flex
                 w="60%">
             </Flex>
