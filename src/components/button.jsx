@@ -7,7 +7,7 @@ const Button = (props) => {
             type="button"
             value="Log Out"
             h="40px"
-            w="20%"
+            w="25%"
             bgColor="cyan"
             border="0"
             borderRadius="1em"/>

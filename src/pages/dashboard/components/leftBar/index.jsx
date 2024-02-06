@@ -1,6 +1,7 @@
 import React from "react";
-import { Flex, Divider, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import DropDown from "./components/DropDown";
+import Divider from "../../../../components/divider";
 
 const LeftBar = () => {
     return (
@@ -18,7 +19,7 @@ const LeftBar = () => {
                 flexDir="column"
                 alignItems="center">
                 <Text>PocketVault</Text>
-                <Divider orientation="horizontal" color="black"></Divider>
+                <Divider orientation="h" />
                 <DropDown toDisplay={[
                         {'name': "DashBoard", 'content': ["solde", "transfert", "depot"]},
                         {'name': "Extras", 'content': ["vendre", "historique"]},

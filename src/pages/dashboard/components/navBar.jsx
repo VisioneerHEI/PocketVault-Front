@@ -5,6 +5,7 @@ import * as token from "../../../utils/token.js"
 
 import "./navBar.css"
 import Button from "../../../components/button.jsx";
+import Divider from "../../../components/divider/index.jsx";
 
 const NavBar = () => {
     return (
@@ -17,14 +18,14 @@ const NavBar = () => {
             paddingTop="10px"
             className="to-blur">
             <Flex
-                w="60%">
+                w="70%">
             </Flex>
             <Flex
                 h="100%"
                 alignItems="center"
-                w="40%"
+                w="30%"
                 justifyContent="end"
-                gap="50px"
+                gap="25px"
                 paddingRight="50px"
                 >
                 <Button 
@@ -32,8 +33,9 @@ const NavBar = () => {
                         token.dump();
                         window.location.href = "/login";
                     }}/>
+                <Divider orientation="v" />
                 <Avatar
-                    w="10%"
+                    w="15%"
                     bgColor="black"
                     borderRadius="100%"></Avatar>
             </Flex>
