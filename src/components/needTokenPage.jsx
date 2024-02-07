@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import ErrorPage from "../pages/Error";
+import PropTypes from 'prop-types';
 
 const LoadError = () => {
     useEffect(()=>{
@@ -25,5 +26,10 @@ const NeedTokenPage = ({Page, token}) => {
         </>
     );
 };
+
+NeedTokenPage.propTypes = {
+    Page: PropTypes.element,
+    token: PropTypes.string,
+}
 
 export default NeedTokenPage;

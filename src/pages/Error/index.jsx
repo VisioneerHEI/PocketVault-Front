@@ -1,5 +1,4 @@
-import React from 'react';
-import { Flex, Text } from '@chakra-ui/react'
+import React, { Flex, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types';
 
 const ErrorPage = ({ error_code }) => {
