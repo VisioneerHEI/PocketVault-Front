@@ -1,8 +1,9 @@
 import React from 'react'
 import { Input } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+import color from '../utils/theme'
 
-const FormButton = ({ value, backgroundColor, color, onClick }) => {
+const FormButton = ({ value, onClick }) => {
   return (
     <Input
       type='button'
@@ -10,8 +11,8 @@ const FormButton = ({ value, backgroundColor, color, onClick }) => {
       w='85%'
       h='50px'
       border='0'
-      backgroundColor={backgroundColor}
-      color={color}
+      backgroundColor={color.primary}
+      color={color.light}
       fontFamily='monospace'
       onClick={onClick}
     />
@@ -20,8 +21,6 @@ const FormButton = ({ value, backgroundColor, color, onClick }) => {
 
 FormButton.propTypes = {
   value: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  color: PropTypes.string,
   onClick: PropTypes.func
 }
 

@@ -4,10 +4,12 @@ const formatColorHexa = (c) => {
   return `#${c}`
 }
 
-export const color = {
+const color = {
   light: formatColorHexa(theme[0]),
   dark: formatColorHexa(theme[1]),
   red: formatColorHexa(theme[2]),
   primary: formatColorHexa(theme[4]),
   second: formatColorHexa(theme[3])
 }
+
+export default color
