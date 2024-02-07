@@ -1,6 +1,8 @@
 import React from "react";
 import { Flex } from "@chakra-ui/react";
 import Card from "./card";
+import Solde from "./card/solde";
+import Spending from "./card/spending";
 
 const Main = () => {
     return (
@@ -15,39 +17,16 @@ const Main = () => {
             padding="0"
             paddingTop="80px">
                 <Card
-                    h="500px">
-                        <Card
-                            display="t"></Card>
-                        <Card
-                            display="t"></Card>
-                        <Card
-                            display="t"></Card>
-                        <Card
-                            display="t"></Card>
+                    h="500px"
+                    display="t">
                 </Card>
-                <Card
-                    h="500px">
-                        <Card
-                            display="t"></Card>
-                        <Card
-                            display="t"></Card>
-                        <Card
-                            display="t"></Card>
-                        <Card
-                            display="t"></Card>
-                </Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
-                <Card></Card>
+                    <Card
+                        h="500px">
+                            <Solde />
+                            <Spending />
+                            <Spending />
+                            <Solde />
+                    </Card>
         </Flex>
     )
 };

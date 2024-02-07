@@ -21,9 +21,9 @@ const LeftBar = () => {
                 <Text>PocketVault</Text>
                 <Divider orientation="h" />
                 <DropDown toDisplay={[
-                        {'name': "DashBoard", 'content': ["solde", "transfert", "depot"]},
-                        {'name': "Extras", 'content': ["vendre", "historique"]},
-                        {'name': "Internationals", 'content': ["bourse"]},
+                        {'name': "DashBoard", 'content': ["Solde", "Transfert", "Depot"]},
+                        {'name': "Extras", 'content': ["Vendre", "Historique"]},
+                        {'name': "Internationals", 'content': ["Bourse"]},
                         {'name': "Contacts", 'content': ["Support", "Social Media"]},
                     ]} />
             </Flex>

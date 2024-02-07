@@ -57,10 +57,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           <Flex
             flexDir='row'
           >
-            <Text
-              color='yellow'
-            >Poket
-            </Text>
+            <Text color='yellow'>Pocket</Text>
             <Text>Vault</Text>
           </Flex>
         </Flex>
