@@ -3,6 +3,7 @@ import Form from '../../components/form'
 import FormButton from '../../components/formButton'
 import InputForm from '../../components/inputForm'
 import useInput from '../../hooks/useInput'
+import * as axios from '../../utils/axios.js'
 
 const Login = () => {
   const [, , modifyAccount] = useInput('')
@@ -27,6 +28,7 @@ const Login = () => {
               value='Login'
               backgroundColor='cyan'
               color='white'
+              onClick={axios.login}
             />
           </>
                     }
