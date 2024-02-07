@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 import { Input } from '@chakra-ui/react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 const FormButton = ({ value, backgroundColor, color, onClick }) => {
   return (
@@ -22,7 +22,7 @@ FormButton.propTypes = {
   value: PropTypes.string,
   backgroundColor: PropTypes.string,
   color: PropTypes.string,
-  onClick: PropTypes.func,
-};
+  onClick: PropTypes.func
+}
 
 export default FormButton

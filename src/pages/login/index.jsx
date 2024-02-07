@@ -9,6 +9,8 @@ const Login = () => {
   const [, , modifyAccount] = useInput('')
   const [, , modifyPassword] = useInput('')
 
+  const handleLogin = () => axios.login 
+
   return (
     <Flex
       w='100vw'
@@ -28,7 +30,7 @@ const Login = () => {
               value='Login'
               backgroundColor='cyan'
               color='white'
-              onClick={axios.login}
+              onClick={handleLogin}
             />
           </>
                     }

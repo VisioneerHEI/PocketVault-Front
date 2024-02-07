@@ -5,8 +5,9 @@ import React, { Flex } from '@chakra-ui/react'
 function App () {
   return (
     <Flex
-      h="100vh"
-      w="100vw">
+      h='100vh'
+      w='100vw'
+    >
       <Router />
     </Flex>
   )
