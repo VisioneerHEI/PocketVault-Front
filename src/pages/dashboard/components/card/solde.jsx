@@ -1,5 +1,5 @@
 import Card from ".";
-import React, { Stat, StatNumber, StatLabel, StatHelpText, StatArrow, Text, Flex } from "@chakra-ui/react"
+import React, { Stat, StatNumber, StatLabel, Text, Flex } from "@chakra-ui/react"
 import Divider from "../../../../components/divider";
 
 const Solde = () => {
@@ -18,12 +18,8 @@ const Solde = () => {
                     fontWeight="1em">Solde</Text>
                 <Divider orientation="h" />
                 <Stat>
-                    <StatLabel>Collected Fees</StatLabel>
+                    <StatLabel>Total in account</StatLabel>
                     <StatNumber>$12.000.00</StatNumber>
-                    <StatHelpText>
-                        <StatArrow type="increase" />
-                        Feb 12 - Feb 8
-                    </StatHelpText>
                 </Stat>
             </Flex>
         </Card>

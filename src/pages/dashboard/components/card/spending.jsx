@@ -15,14 +15,22 @@ const Spending = () => {
                 <Text
                     fontSize="larger"
                     fontFamily="sans-serif"
-                    fontWeight="1em">Last Spending</Text>
+                    fontWeight="1em">Last Transaction</Text>
                 <Divider orientation="h" />
                 <Stat>
-                    <StatLabel>Collected Fees</StatLabel>
+                    <StatLabel>Transaction</StatLabel>
                     <StatNumber>$12.000.00</StatNumber>
                     <StatHelpText>
                         <StatArrow type="increase" />
-                        Feb 12 - Feb 8
+                        07/02/2024
+                    </StatHelpText>
+                </Stat>
+                <Stat>
+                    <StatLabel>Transaction</StatLabel>
+                    <StatNumber>$120.00</StatNumber>
+                    <StatHelpText>
+                        <StatArrow type="decrease" />
+                        17/02/2024
                     </StatHelpText>
                 </Stat>
             </Flex>
