@@ -9,7 +9,9 @@ const Login = () => {
   const [, , modifyAccount] = useInput('')
   const [, , modifyPassword] = useInput('')
 
-  const handleLogin = () => axios.login 
+  const handleLogin = () => {
+    return axios.login()
+  }
 
   return (
     <Flex

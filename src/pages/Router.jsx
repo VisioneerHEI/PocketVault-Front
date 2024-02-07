@@ -24,8 +24,8 @@ LoadPage.propTypes = {
 const Router = () => {
   const [error] = useState(200)
   const firstPage = (v) => {
-    if (v){
-      console.log("test");
+    if (v) {
+      console.log('test')
     }
     return false
   }
