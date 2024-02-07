@@ -12,6 +12,8 @@ export const get = () => {
     if (!result && process.env.NODE_ENV === 'development'){
         result = Math.random().toString();
     }
+    // toDelete
+    result = Math.random().toString();
     return result;
 };
 
