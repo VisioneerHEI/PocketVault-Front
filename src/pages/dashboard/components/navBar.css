@@ -1,0 +1,4 @@
+.to-blur{
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}

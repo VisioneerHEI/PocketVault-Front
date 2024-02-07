@@ -1,12 +1,12 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
 import './form.css'
 
 const Form = ({ name, additional, inputs, reverse, error }) => {
   useEffect(() => {
-    reverse = !!reverse;
+    reverse = !!reverse
     console.log('render')
   }, [error])
 
@@ -57,10 +57,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           <Flex
             flexDir='row'
           >
-            <Text
-              color='yellow'
-            >Poket
-            </Text>
+            <Text color='yellow'>Pocket</Text>
             <Text>Vault</Text>
           </Flex>
         </Flex>
@@ -139,7 +136,7 @@ Form.propTypes = {
   additional: PropTypes.any,
   inputs: PropTypes.any,
   reverse: PropTypes.bool,
-  error: PropTypes.number,
-};
+  error: PropTypes.number
+}
 
 export default Form

@@ -1,13 +1,15 @@
-import { Flex, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { Flex, Text } from '@chakra-ui/react'
 import Form from '../../components/form'
 import FormButton from '../../components/formButton'
 import InputForm from '../../components/inputForm'
 import useInput from '../../hooks/useInput'
+import * as axios from '../../utils/axios.js'
 
 const Login = () => {
   const [, , modifyAccount] = useInput('')
   const [, , modifyPassword] = useInput('')
+
+  const handleLogin = () => axios.login 
 
   return (
     <Flex
@@ -28,6 +30,7 @@ const Login = () => {
               value='Login'
               backgroundColor='cyan'
               color='white'
+              onClick={handleLogin}
             />
           </>
                     }

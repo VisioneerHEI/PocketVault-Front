@@ -1,5 +1,5 @@
-import { Flex, Text } from '@chakra-ui/react'
-import React, { useEffect } from 'react'
+import React, { Flex, Text } from '@chakra-ui/react'
+import { useEffect } from 'react'
 
 import Form from '../../components/form'
 import FormButton from '../../components/formButton'
