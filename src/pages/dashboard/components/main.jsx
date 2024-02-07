@@ -15,7 +15,7 @@ const Main = () => {
       overflowX='hidden'
       margin='0'
       padding='0'
-      paddingTop='80px'
+      paddingTop='90px'
     >
       <Card
         h='500px'

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+import color from '../../../../../utils/theme'
 
 const DropDown = ({ toDisplay }) => {
   /**
@@ -31,7 +32,7 @@ const DropDown = ({ toDisplay }) => {
                   <AccordionButton
                     h='50px'
                     justifyContent='space-between'
-                    bgColor='cyan'
+                    bgColor={color.dark}
                     border='0'
                     onClick={() => {
                       console.log('clicked' + e)
