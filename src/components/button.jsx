@@ -1,5 +1,5 @@
 import React, { Input } from '@chakra-ui/react'
-import color from '../utils/theme'
+import color, { transColor } from '../utils/theme'
 
 const Button = (props) => {
   return (
@@ -12,6 +12,10 @@ const Button = (props) => {
       bgColor={color.second}
       border='0'
       borderRadius='1em'
+      transitionDuration="400ms"
+      _hover={{
+        bgColor: transColor.second(.5)
+      }}
     />
   )
 }

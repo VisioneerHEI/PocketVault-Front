@@ -6,9 +6,10 @@ import * as token from '../../../utils/token.js'
 import './navBar.css'
 import Button from '../../../components/button.jsx'
 import Divider from '../../../components/divider/index.jsx'
-import color from '../../../utils/theme.js'
+import color, { transColor } from '../../../utils/theme.js'
 
 const NavBar = () => {
+  console.log(transColor.dark(0))
   return (
     <Flex
       h='70px'
@@ -18,7 +19,7 @@ const NavBar = () => {
       left='0'
       paddingTop='10px'
       className='to-blur'
-      bgColor={`${color.dark}cc`}
+      bgColor={transColor.dark(.4)}
     >
       <Flex
         w='70%'
@@ -37,7 +38,7 @@ const NavBar = () => {
             window.location.href = '/login'
           }}
         />
-        <Divider orientation='v' />
+        <Divider orientation='v'light={true} />
         <Avatar
           w='15%'
           bgColor={color.dark}

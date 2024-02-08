@@ -7,7 +7,7 @@ import color from '../../../../utils/theme.js'
 const LeftBar = () => {
   return (
     <Flex
-      bgColor={color.second}
+      bgColor={color.dark}
       h='100%'
       w='20%'
       zIndex='11'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
-import color from '../../../../../utils/theme'
+import color, { transColor } from '../../../../../utils/theme'
 
 const DropDown = ({ toDisplay }) => {
   /**
@@ -22,6 +22,10 @@ const DropDown = ({ toDisplay }) => {
               justifyContent='space-between'
               bgColor='transparent'
               border='0'
+              transitionDuration="400ms"
+              _hover={{
+                bgColor: transColor.dark(.2)
+              }}
             >
               <Text>{e.name}</Text>
               <AccordionIcon />
@@ -32,10 +36,14 @@ const DropDown = ({ toDisplay }) => {
                   <AccordionButton
                     h='50px'
                     justifyContent='space-between'
-                    bgColor={color.dark}
+                    bgColor={color.light}
                     border='0'
                     onClick={() => {
                       console.log('clicked' + e)
+                    }}
+                    transitionDuration="400ms"
+                    _hover={{
+                      bgColor: transColor.primary(.5)
                     }}
                   >
                     <Text>{e}</Text>
