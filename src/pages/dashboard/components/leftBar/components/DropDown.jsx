@@ -16,7 +16,7 @@ const DropDown = ({ toDisplay }) => {
     >
       {toDisplay.map((e) => {
         return (
-          <AccordionItem key={`itemdrop${e}`}>
+          <AccordionItem key={`itemdrop${e}`} border="0" >
             <AccordionButton
               h='50px'
               justifyContent='space-between'
@@ -32,7 +32,7 @@ const DropDown = ({ toDisplay }) => {
             </AccordionButton>
             {e.content.map(e => {
               return (
-                <AccordionPanel key={`drop${e}`}>
+                <AccordionPanel key={`drop${e}`} padding="0">
                   <AccordionButton
                     h='50px'
                     justifyContent='space-between'

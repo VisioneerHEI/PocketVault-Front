@@ -21,7 +21,10 @@ const LeftBar = () => {
         flexDir='column'
         alignItems='center'
       >
-        <Text>PocketVault</Text>
+        <Text
+          h="3em"
+          fontSize="2em"
+          padding=".5em">PocketVault</Text>
         <Divider orientation='h' />
         <DropDown toDisplay={[
           { name: 'DashBoard', content: ['Solde', 'Transfert', 'Depot'] },
