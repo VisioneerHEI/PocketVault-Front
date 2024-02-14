@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
+import color from '../../../../utils/theme.js'
 
 const Card = ({ h, children, display }) => {
   return (
@@ -15,7 +16,7 @@ const Card = ({ h, children, display }) => {
       margin='0'
       padding='0'
       opacity={display ? '.9' : '1'}
-      bgColor={display ? 'grey' : ''}
+      bgColor={display ? color.dark : ''}
     >
       {children}
     </Flex>
