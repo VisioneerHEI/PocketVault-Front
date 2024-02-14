@@ -17,6 +17,7 @@ const Main = () => {
       margin='0'
       padding='0'
       paddingTop='90px'
+      gap=".5em"
     >
       <Graph h='500px' />
       <Card
