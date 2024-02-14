@@ -4,6 +4,7 @@ import FormButton from '../../components/formButton'
 import InputForm from '../../components/inputForm'
 import useInput from '../../hooks/useInput'
 import * as axios from '../../utils/axios.js'
+import color from '../../utils/theme'
 
 const Login = () => {
   const [, , modifyAccount] = useInput('')
@@ -23,7 +24,7 @@ const Login = () => {
     >
       <Form
         name='Login'
-        additional={<Text fontSize='small'><a href='/signUp'>Sign Up now</a></Text>}
+        additional={<Text fontSize='small' color={color.primary}><a href='/signUp'>Sign Up now</a></Text>}
         inputs={
           <>
             <InputForm placeholder='Email or UserName' onChange={modifyAccount} />

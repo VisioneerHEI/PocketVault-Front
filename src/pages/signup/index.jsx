@@ -7,6 +7,7 @@ import InputForm from '../../components/inputForm'
 import useError from '../../hooks/useError'
 import useInput from '../../hooks/useInput'
 import { verify } from '../../utils/password'
+import color from '../../utils/theme'
 
 const SignUp = () => {
   const [, , modifyName] = useInput('')
@@ -35,7 +36,7 @@ const SignUp = () => {
       <Form
         name='SignUp'
         additional={
-          <Text fontSize='small'>If you want to connect to an another account <a href='/login'>Login</a></Text>
+          <Text fontSize='small'>If you want to connect to an another account <Text color={color.primary}><a href='/login'>Login</a></Text></Text>
                 }
         inputs={
           <>
