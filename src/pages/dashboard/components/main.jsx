@@ -3,6 +3,7 @@ import { Flex } from '@chakra-ui/react'
 import Card from './card'
 import Solde from './card/solde'
 import Spending from './card/spending'
+import Graph from './card/graph'
 
 const Main = () => {
   return (
@@ -17,10 +18,7 @@ const Main = () => {
       padding='0'
       paddingTop='90px'
     >
-      <Card
-        h='500px'
-        display='t'
-      />
+      <Graph h='500px' />
       <Card
         h='500px'
       >
