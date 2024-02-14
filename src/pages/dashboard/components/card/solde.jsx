@@ -1,11 +1,12 @@
 import Card from '.'
 import React, { Stat, StatNumber, StatLabel, Text, Flex } from '@chakra-ui/react'
 import Divider from '../../../../components/divider'
+import PropTypes from 'prop-types'
 
-const Solde = () => {
+const Solde = ({ isCrypto }) => {
   return (
     <Card
-      display='t'
+      display={true}
     >
       <Flex
         w='100%'
@@ -18,7 +19,7 @@ const Solde = () => {
           fontSize='larger'
           fontFamily='sans-serif'
           fontWeight='1em'
-        >Solde
+        >Solde {isCrypto ? "Crypto" : ""}
         </Text>
         <Divider orientation='h' />
         <Stat>
@@ -28,6 +29,10 @@ const Solde = () => {
       </Flex>
     </Card>
   )
+}
+
+Solde.propTypes = {
+  isCrypto: PropTypes.bool
 }
 
 export default Solde

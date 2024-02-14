@@ -23,10 +23,12 @@ const Main = () => {
         h='500px'
       >
         <Solde />
+        <Spending isCrypto={true} />
         <Spending />
-        <Spending />
-        <Solde />
+        <Solde isCrypto={true} />
       </Card>
+      <Graph h='500px' />
+      <Graph h='500px' />
     </Flex>
   )
 }

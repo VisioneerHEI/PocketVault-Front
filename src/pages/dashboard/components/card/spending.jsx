@@ -1,11 +1,12 @@
 import Card from '.'
 import React, { Stat, StatNumber, StatLabel, StatHelpText, StatArrow, Text, Flex } from '@chakra-ui/react'
 import Divider from '../../../../components/divider'
+import PropTypes from 'prop-types'
 
-const Spending = () => {
+const Spending = ({ isCrypto }) => {
   return (
     <Card
-      display='t'
+      display={true}
     >
       <Flex
         w='100%'
@@ -18,7 +19,7 @@ const Spending = () => {
           fontSize='larger'
           fontFamily='sans-serif'
           fontWeight='1em'
-        >Last Transaction
+        >Last {isCrypto ? "Crypto" : ""} Transaction
         </Text>
         <Divider orientation='h' />
         <Stat>
@@ -40,6 +41,10 @@ const Spending = () => {
       </Flex>
     </Card>
   )
+}
+
+Spending.propTypes = {
+  isCrypto: PropTypes.bool
 }
 
 export default Spending
