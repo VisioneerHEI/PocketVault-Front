@@ -9,6 +9,7 @@ import PropTypes from 'prop-types'
 
 import * as token from '../utils/token.js'
 import Dashboard from './dashboard'
+import Transaction from './transaction'
 
 const LoadPage = ({ url }) => {
   useEffect(() => {
@@ -48,7 +49,12 @@ const Router = () => {
           <Route path='/signup' element={<SignUp />} />
           <Route
             path='/dashboard' element={
-              <NeedTokenPage Page={<Dashboard />} token={token.get()} />
+              <NeedTokenPage token={token.get()}><Dashboard /></NeedTokenPage>
+                    }
+          />
+          <Route
+            path='/transaction' element={
+              <NeedTokenPage token={token.get()}><Transaction /></NeedTokenPage>
                     }
           />
           <Route path='*' element={<ErrorPage errorCode={error} />} />
