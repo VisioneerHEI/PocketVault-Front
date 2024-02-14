@@ -20,16 +20,18 @@ const Main = () => {
       gap=".5em"
     >
       <Graph h='500px' />
+      <Graph h='500px' />
       <Card
         h='500px'
       >
         <Solde />
         <Spending isCrypto={true} />
+      </Card>
+      <Card
+        h='500px'>
         <Spending />
         <Solde isCrypto={true} />
       </Card>
-      <Graph h='500px' />
-      <Graph h='500px' />
     </Flex>
   )
 }
