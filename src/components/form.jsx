@@ -1,6 +1,7 @@
 import { Avatar, Flex, Text } from '@chakra-ui/react'
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
+import color from '../utils/theme'
 
 import './form.css'
 
@@ -21,7 +22,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
       position='relative'
     >
       <Flex
-        bgColor='cyan'
+        bgColor={color.primary}
         w='600px'
         h='500px'
         borderRadius='50px'
@@ -31,7 +32,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
         opacity='.5'
       />
       <Flex
-        bgColor='cyan'
+        bgColor={color.primary}
         w='550px'
         h='600px'
         borderRadius='50px'
@@ -57,8 +58,8 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           <Flex
             flexDir='row'
           >
-            <Text color='yellow'>Pocket</Text>
-            <Text>Vault</Text>
+            <Text color={color.primary}>Pocket</Text>
+            <Text color={color.dark}>Vault</Text>
           </Flex>
         </Flex>
         <Flex
@@ -95,7 +96,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           borderRadius='.2em'
           shadow='.01em .01em .5em gray'
         >
-          <Avatar borderRadius='100%' backgroundColor='black' w='50px' h='50px' />
+          <Avatar borderRadius='100%' backgroundColor={color.dark} w='50px' h='50px' />
           <Text
             textAlign='center'
             fontSize='x-large'
@@ -111,7 +112,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           </Text>
         </Flex>
         <Flex
-          backgroundColor='red'
+          backgroundColor={color.red}
           w='20%'
           h={error ? '10%' : '0'}
           zIndex='1'

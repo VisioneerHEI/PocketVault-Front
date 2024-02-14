@@ -2,11 +2,12 @@ import React from 'react'
 import { Flex, Text } from '@chakra-ui/react'
 import DropDown from './components/DropDown'
 import Divider from '../../../../components/divider'
+import color from '../../../../utils/theme.js'
 
 const LeftBar = () => {
   return (
     <Flex
-      bgColor='grey'
+      bgColor={color.dark}
       h='100%'
       w='20%'
       zIndex='11'
