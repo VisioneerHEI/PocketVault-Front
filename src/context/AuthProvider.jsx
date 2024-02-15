@@ -17,18 +17,18 @@ const LoadError = () => {
   )
 }
 
-const UserContext = createContext()
+export const UserContext = createContext()
 
 const AuthProvider = ({ children }) => {
   const getSolde = () => {
-    return st.get("solde") || 0
+    return Number(st.get("solde")) || 0.0
   };
   const addMoney = (v) => {
-    st.set("solde", getSolde() + v)
+    st.set("solde", getSolde() + Number(v))
     return st.get("solde")
   };
   const getBackMoney = (v) => {
-    st.set("solde", getSolde() - v)
+    st.set("solde", getSolde() - Number(v))
     return st.get("solde")
   };
 

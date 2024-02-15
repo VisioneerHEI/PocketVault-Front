@@ -1,13 +1,17 @@
 import React, { Flex, FormControl, Input, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../../../context/AuthProvider";
 import TransactionForm from "../TransactionForm";
 import ButtonGroup from "../TransactionForm/ButtonGroup";
 
 const Depot =  () => {
     const [amount, setAmount] = useState("")
 
+    const { addMoney } = useContext(UserContext)
+
     const handleSubmit = () => {
         window.location.href = "/dashboard"
+        addMoney(amount)
     }
 
     return (<Flex

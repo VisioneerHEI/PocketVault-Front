@@ -1,13 +1,17 @@
 import React, { Flex, FormControl, FormLabel, Input, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../../../context/AuthProvider";
 import TransactionForm from "../TransactionForm";
 import ButtonGroup from "../TransactionForm/ButtonGroup";
 
 const Retrait =  () => {
     const [amount, setAmount] = useState("")
 
+    const { getBackMoney } = useContext(UserContext)
+
     const handleSubmit = () => {
         window.location.href = "/dashboard"
+        getBackMoney(amount)
     }
 
     return (<Flex
