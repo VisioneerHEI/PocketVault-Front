@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ErrorPage from './Error'
 import Login from './login'
 import SignUp from './signup'
-import NeedTokenPage from '../components/needTokenPage'
 import PropTypes from 'prop-types'
 
 import * as token from '../utils/token.js'
@@ -12,6 +11,7 @@ import Dashboard from './dashboard'
 import Transaction from './transaction'
 import Depot from './transaction/components/Depot'
 import Retrait from './transaction/components/Retrait'
+import AuthProvider from '../context/AuthProvider'
 
 const LoadPage = ({ url }) => {
   useEffect(() => {
@@ -49,22 +49,9 @@ const Router = () => {
           />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route
-            path='/dashboard' element={
-              <NeedTokenPage token={token.get()}><Dashboard /></NeedTokenPage>
-                    }
-          />
-          <Route
-            path='/transaction'>
-            <Route
-              path='/transaction/depot'element={
-                <NeedTokenPage token={token.get()}><Transaction page={<Depot />} /></NeedTokenPage>
-                      }></Route>
-            <Route
-              path='/transaction/retrait'element={
-                <NeedTokenPage token={token.get()}><Transaction page={<Retrait />} /></NeedTokenPage>
-                      }></Route>
-          </Route>
+          <Route path='/dashboard' element={<AuthProvider><Dashboard /></AuthProvider>}/>
+          <Route path='/transaction/depot'element={<Transaction page={<Depot />} />} />
+          <Route path='/transaction/retrait'element={<Transaction page={<Retrait />} />} />
           <Route path='*' element={<ErrorPage errorCode={error} />} />
         </Routes>
       </BrowserRouter>
