@@ -30,6 +30,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
         right='-200px'
         transform='rotate(45deg)'
         opacity='.5'
+        zIndex="0"
       />
       <Flex
         bgColor={color.primary}
@@ -40,12 +41,14 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
         right='-200px'
         transform='rotate(45deg)'
         opacity='.6'
+        zIndex="0"
       />
       <Flex
-        w='50%'
+        w={['100%', '100%', '50%']}
         h='100%'
         flexDir='column'
         alignItems='center'
+        zIndex="1"
       >
         <Flex
           fontFamily='cursive'
@@ -79,7 +82,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
         </Flex>
       </Flex>
       <Flex
-        w='50%'
+        w={['0%', '0%', '50%']}
         h='100%'
         justifyContent='center'
         alignItems='center'
@@ -95,6 +98,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           flexDir='column'
           borderRadius='.2em'
           shadow='.01em .01em .5em gray'
+          display={['none', 'none', 'block']}
         >
           <Avatar borderRadius='100%' backgroundColor={color.dark} w='50px' h='50px' />
           <Text
