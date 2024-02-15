@@ -10,6 +10,8 @@ import PropTypes from 'prop-types'
 import * as token from '../utils/token.js'
 import Dashboard from './dashboard'
 import Transaction from './transaction'
+import Depot from './transaction/components/Depot'
+import Retrait from './transaction/components/Retrait'
 
 const LoadPage = ({ url }) => {
   useEffect(() => {
@@ -53,10 +55,16 @@ const Router = () => {
                     }
           />
           <Route
-            path='/transaction' element={
-              <NeedTokenPage token={token.get()}><Transaction /></NeedTokenPage>
-                    }
-          />
+            path='/transaction'>
+            <Route
+              path='/transaction/depot'element={
+                <NeedTokenPage token={token.get()}><Transaction page={<Depot />} /></NeedTokenPage>
+                      }></Route>
+            <Route
+              path='/transaction/retrait'element={
+                <NeedTokenPage token={token.get()}><Transaction page={<Retrait />} /></NeedTokenPage>
+                      }></Route>
+          </Route>
           <Route path='*' element={<ErrorPage errorCode={error} />} />
         </Routes>
       </BrowserRouter>
