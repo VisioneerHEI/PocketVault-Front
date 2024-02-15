@@ -50,8 +50,12 @@ const Router = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/dashboard' element={<AuthProvider><Dashboard /></AuthProvider>}/>
-          <Route path='/transaction/depot'element={<Transaction page={<Depot />} />} />
-          <Route path='/transaction/retrait'element={<Transaction page={<Retrait />} />} />
+          <Route path='/transaction/depot'element={<AuthProvider>
+            <Transaction page={<Depot />} />
+          </AuthProvider>} />
+          <Route path='/transaction/retrait'element={<AuthProvider>
+            <Transaction page={<Retrait />} />
+          </AuthProvider>} />
           <Route path='*' element={<ErrorPage errorCode={error} />} />
         </Routes>
       </BrowserRouter>
