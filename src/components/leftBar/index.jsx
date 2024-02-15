@@ -1,8 +1,8 @@
 import React from 'react'
 import { Flex, Text } from '@chakra-ui/react'
 import DropDown from './components/DropDown'
-import Divider from '../../../../components/divider'
-import color from '../../../../utils/theme.js'
+import Divider from '../divider'
+import color from '../../utils/theme'
 
 const LeftBar = () => {
   return (

@@ -1,8 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
-import LeftBar from "../dashboard/components/leftBar";
 import RigthBar from "./components/RigthBar";
 import PropTypes from 'prop-types'
+import LeftBar from "../../components/leftBar";
 
 const Transaction = ({ page }) => {
     return <Flex

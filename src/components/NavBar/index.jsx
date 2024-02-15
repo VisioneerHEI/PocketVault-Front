@@ -1,12 +1,11 @@
 import React from 'react'
-import { Avatar, Flex } from '@chakra-ui/react'
+import { Avatar, Button, Flex } from '@chakra-ui/react'
 
-import * as token from '../../../utils/token.js'
+import * as token from '../../utils/token.js'
 
-import './navBar.css'
-import Button from '../../../components/button.jsx'
-import Divider from '../../../components/divider/index.jsx'
-import color, { transColor } from '../../../utils/theme.js'
+import './style.css'
+import color, { transColor } from '../../utils/theme'
+import Divider from '../divider/index.jsx'
 
 const NavBar = () => {
   console.log(transColor.dark(0))
@@ -16,7 +15,7 @@ const NavBar = () => {
       w='100%'
       position='absolute'
       top='0'
-      left='0'
+      right='0'
       paddingTop='10px'
       className='to-blur'
       bgColor={transColor.dark(.4)}
@@ -37,11 +36,10 @@ const NavBar = () => {
           onClick={() => {
             token.dump()
             window.location.href = '/login'
-          }}
-        />
+          }}>Log Out</Button>
         <Divider orientation='v'light={true} />
         <Avatar />
-        <Flex 
+        <Flex
           h="15em"
           w="15em"
           bgColor={color.primary}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
-import color, { transColor } from '../../../../../utils/theme'
+import color, { transColor } from '../../../utils/theme'
 
 const DropDown = ({ toDisplay }) => {
   /**
