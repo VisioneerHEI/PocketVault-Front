@@ -1,17 +1,12 @@
-import { Flex } from "@chakra-ui/react";
 import React from "react";
 import RigthBar from "./components/RigthBar";
 import PropTypes from 'prop-types'
-import LeftBar from "../../components/leftBar";
+import MainLayer from '../../components/MainLayer'
 
 const Transaction = ({ page }) => {
-    return <Flex
-                h='100%'
-                w='100%'
-                >
-                    <LeftBar />
-                    <RigthBar page={page} />
-                </Flex>
+    return<MainLayer>
+                <RigthBar page={page} />
+            </MainLayer>
 };
 
 Transaction.propTypes = {

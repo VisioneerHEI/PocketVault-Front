@@ -1,6 +1,7 @@
-import React, { Button, Flex, FormControl, Input, Text } from "@chakra-ui/react";
+import React, { Flex, FormControl, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import TransactionForm from "../TransactionForm";
+import ButtonGroup from "../TransactionForm/ButtonGroup";
 
 const Depot =  () => {
     const [amount, setAmount] = useState("")
@@ -28,9 +29,7 @@ const Depot =  () => {
                         />
                     </FormControl>
 
-                    <Button type="submit" colorScheme="blue" mt={4}>
-                        Send
-                    </Button>
+                    <ButtonGroup />
                 </TransactionForm>
         </Flex>
 )

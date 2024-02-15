@@ -1,6 +1,7 @@
-import React, { Button, Flex, FormControl, FormLabel, Input, Text } from "@chakra-ui/react";
+import React, { Flex, FormControl, FormLabel, Input, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import TransactionForm from "../TransactionForm";
+import ButtonGroup from "../TransactionForm/ButtonGroup";
 
 const Retrait =  () => {
     const [amount, setAmount] = useState("")
@@ -14,7 +15,7 @@ const Retrait =  () => {
             alignItems="center"
             w="80%">
                 <TransactionForm onSubmit={handleSubmit}>
-                    <Text fontSize="2em">Add money</Text>
+                    <Text fontSize="2em">Get money</Text>
 
                     <Flex
                         w="100%"
@@ -34,10 +35,7 @@ const Retrait =  () => {
                         <FormLabel>{amount}</FormLabel>
                     </Flex>
 
-
-                    <Button type="submit" colorScheme="blue" mt={4}>
-                        Send
-                    </Button>
+                    <ButtonGroup />
                 </TransactionForm>
         </Flex>
 )
