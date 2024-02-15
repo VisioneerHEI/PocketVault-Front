@@ -12,7 +12,7 @@ const MainLayer = ({ children }) => {
     >
       <LeftBar />
       <Flex
-        w="80%"
+        w={['90%', '90%', '80%']}
         h="100%">
         <NavBar />
         {children}

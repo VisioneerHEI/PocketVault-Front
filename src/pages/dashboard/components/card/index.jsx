@@ -7,7 +7,7 @@ const Card = ({ h, children, display }) => {
   return (
     <Flex
       h={h || '49%'}
-      w='49%'
+      w={['100%', '100%', '49%']}
       border='0 solid'
       borderRadius='1em'
       wrap='wrap'

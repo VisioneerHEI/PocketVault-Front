@@ -6,6 +6,8 @@ import * as token from '../../utils/token.js'
 import './style.css'
 import color, { transColor } from '../../utils/theme'
 import Divider from '../divider/index.jsx'
+import { CiLogout } from 'react-icons/ci'
+import TextIcon from '../TextIcon.jsx'
 
 const NavBar = () => {
   console.log(transColor.dark(0))
@@ -36,7 +38,7 @@ const NavBar = () => {
           onClick={() => {
             token.dump()
             window.location.href = '/login'
-          }}>Log Out</Button>
+          }}><TextIcon text="Log Out" icon={<CiLogout />} /></Button>
         <Divider orientation='v'light={true} />
         <Avatar />
         <Flex

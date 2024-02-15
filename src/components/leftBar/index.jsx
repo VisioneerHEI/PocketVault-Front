@@ -3,13 +3,23 @@ import { Flex, Text } from '@chakra-ui/react'
 import DropDown from './components/DropDown'
 import Divider from '../divider'
 import color from '../../utils/theme'
+import {
+  HamburgerIcon,
+  AddIcon,
+  MinusIcon,
+  PhoneIcon,
+  EmailIcon,
+  ExternalLinkIcon
+} from '@chakra-ui/icons'
+import { GoGraph } from 'react-icons/go'
+import { FaBorderAll } from 'react-icons/fa'
 
 const LeftBar = () => {
   return (
     <Flex
       bgColor={color.dark}
       h='100%'
-      w='20%'
+      w={['10%', '10%', '20%']}
       zIndex='11'
       flexDir='column'
       justifyContent='space-between'
@@ -21,20 +31,25 @@ const LeftBar = () => {
         flexDir='column'
         alignItems='center'
       >
-        <Text
-          h="3em"
-          fontSize="2em"
-          padding=".5em">PocketVault</Text>
+        <Flex
+            h="3em"
+            fontSize="2em"
+            padding=".5em">
+          <Text
+            display={["none", "none", "block"]}>PocketVault</Text>
+            <HamburgerIcon
+              display={["block", "block", "none"]}/>
+          </Flex>
         <Divider orientation='h' />
         <DropDown toDisplay={[
-          { name: 'DashBoard', content: [
-            {"name":'All', "redirect":"/dashboard"},
-            {"name":'Depot', "redirect":"/transaction/depot"},
-            {"name":'Get Money', "redirect":"/transaction/retrait"},
+          { name: 'DashBoard', icon: <GoGraph />, content: [
+            {name:'All', redirect:"/dashboard", icon: <FaBorderAll />},
+            {name:'Depot', redirect:"/transaction/depot", icon: <AddIcon />},
+            {name:'Get Money', redirect:"/transaction/retrait", icon: <MinusIcon />},
           ]},
-          { name: 'Other', content: [
-            {"name":'Contact us', "redirect":"#"},
-            {"name":'Support', "redirect":"#"},
+          { name: 'Other', icon: <ExternalLinkIcon />, content: [
+            {name:'Contact us', redirect:"#", icon: <EmailIcon />},
+            {name:'Support', redirect:"#", icon: <PhoneIcon />},
           ]},
         ]}
         />
