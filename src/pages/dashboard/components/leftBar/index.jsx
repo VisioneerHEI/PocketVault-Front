@@ -27,10 +27,15 @@ const LeftBar = () => {
           padding=".5em">PocketVault</Text>
         <Divider orientation='h' />
         <DropDown toDisplay={[
-          { name: 'DashBoard', content: ['Solde', 'Transfert', 'Depot'] },
-          { name: 'Extras', content: ['Vendre', 'Historique'] },
-          { name: 'Internationals', content: ['Bourse'] },
-          { name: 'Contacts', content: ['Support', 'Social Media'] }
+          { name: 'DashBoard', content: [
+            {"name":'All', "redirect":"/dashboard"},
+            {"name":'Depot', "redirect":"/transaction/depot"},
+            {"name":'Get Money', "redirect":"/transaction/retrait"},
+          ]},
+          { name: 'Other', content: [
+            {"name":'Contact us', "redirect":"#"},
+            {"name":'Support', "redirect":"#"},
+          ]},
         ]}
         />
       </Flex>

@@ -30,23 +30,25 @@ const DropDown = ({ toDisplay }) => {
               <Text>{e.name}</Text>
               <AccordionIcon />
             </AccordionButton>
-            {e.content.map(e => {
+            {e.content.map(f => {
               return (
-                <AccordionPanel key={`drop${e}`} padding="0">
+                <AccordionPanel key={`drop${e.name}${f}`} padding="0">
                   <AccordionButton
                     h='50px'
                     justifyContent='space-between'
                     bgColor={color.light}
                     border='0'
                     onClick={() => {
-                      console.log('clicked' + e)
+                      if (f.redirect){
+                        window.location.href = f.redirect
+                      }
                     }}
                     transitionDuration="400ms"
                     _hover={{
                       bgColor: transColor.primary(.5)
                     }}
                   >
-                    <Text>{e}</Text>
+                    <Text>{f.name}</Text>
                   </AccordionButton>
                 </AccordionPanel>
               )
