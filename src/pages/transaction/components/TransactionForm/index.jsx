@@ -16,7 +16,8 @@ const TransactionForm =  ({ children, onSubmit }) => {
                 h="30em"
                 w="25em"
                 borderRadius="1em"
-                bgColor="white">
+                bgColor="white"
+                maxW="80vw">
                 {children}
             </Flex>
         </form>

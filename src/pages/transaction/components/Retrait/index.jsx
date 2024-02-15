@@ -13,7 +13,7 @@ const Retrait =  () => {
     return (<Flex
             justifyContent="center"
             alignItems="center"
-            w="80%">
+            w="100%">
                 <TransactionForm onSubmit={handleSubmit}>
                     <Text fontSize="2em">Get money</Text>
 
