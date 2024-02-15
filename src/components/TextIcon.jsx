@@ -6,7 +6,7 @@ const TextIcon = ({ text, icon }) => {
         maxH="100%"
         h="3em"
         fontSize="1.5em"
-        margin=".5em">
+        margin={["0", "0", ".5em"]}>
         <Text
             display={["none", "none", "block"]}>{text}</Text>
         <Flex display={["block", "block", "none"]}>{icon}</Flex>

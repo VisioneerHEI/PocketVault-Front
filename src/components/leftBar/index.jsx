@@ -20,6 +20,7 @@ const LeftBar = () => {
       bgColor={color.dark}
       h='100%'
       w={['10%', '10%', '20%']}
+      minW={"60px"}
       zIndex='11'
       flexDir='column'
       justifyContent='space-between'

@@ -1,7 +1,8 @@
 import React from 'react'
-import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon, Text, Flex, Icon } from '@chakra-ui/react'
+import { Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import color, { transColor } from '../../../utils/theme'
+import TextIcon from '../../TextIcon'
 
 const DropDown = ({ toDisplay }) => {
   /**
@@ -27,14 +28,7 @@ const DropDown = ({ toDisplay }) => {
                 bgColor: transColor.dark(.2)
               }}
             >
-              <Flex>
-                <Text
-                  display={["none", "none", "block"]}>{e.name}
-                </Text>
-                <Icon
-                  display={["block", "block", "none"]}>{e.icon}
-                </Icon>
-              </Flex>
+              <TextIcon text={e.name} icon={e.icon}/>
               <AccordionIcon display={["none", "none", "block"]} />
             </AccordionButton>
             {e.content.map(f => {
@@ -55,14 +49,7 @@ const DropDown = ({ toDisplay }) => {
                       bgColor: transColor.primary(.5)
                     }}
                   >
-                    <Flex>
-                      <Text
-                        display={["none", "none", "block"]}>{f.name}
-                      </Text>
-                      <Icon
-                        display={["block", "block", "none"]}>{f.icon}
-                      </Icon>
-                    </Flex>
+                    <TextIcon text={f.name} icon={f.icon}/>
                   </AccordionButton>
                 </AccordionPanel>
               )
