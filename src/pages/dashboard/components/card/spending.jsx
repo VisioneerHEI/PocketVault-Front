@@ -16,7 +16,7 @@ const Spending = ({ isCrypto }) => {
         alignItems='center'
       >
         <Text
-          fontSize='larger'
+          fontSize='1.25em'
           fontFamily='sans-serif'
           fontWeight='1em'
         >Last {isCrypto ? "Crypto" : ""} Transaction

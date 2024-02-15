@@ -16,7 +16,7 @@ const Solde = ({ isCrypto }) => {
         alignItems='center'
       >
         <Text
-          fontSize='larger'
+          fontSize='1.5em'
           fontFamily='sans-serif'
           fontWeight='1em'
         >Solde {isCrypto ? "Crypto" : ""}
