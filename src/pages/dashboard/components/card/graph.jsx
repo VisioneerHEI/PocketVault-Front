@@ -43,10 +43,10 @@ const Graph = ({ h, fullW, content }) => {
         <LineChart
           width={fullW ? 800 : 500}
           height={400}
-          data={content.map(e=>{
+          data={content.map((e, i)=>{
             return {
             name: e.date,
-            solde: e.value,
+            solde: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.value)}, 0),
             }
           })}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
