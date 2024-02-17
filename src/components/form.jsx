@@ -22,25 +22,25 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
       position='relative'
     >
       <Flex
-        bgColor={color.primary}
+        bgGradient={`linear(to-r, ${color.primary}, white)`}
         w='600px'
         h='500px'
         borderRadius='50px'
         position='absolute'
         right='-200px'
         transform='rotate(45deg)'
-        opacity='.5'
+        opacity='.4'
         zIndex="0"
       />
       <Flex
-        bgColor={color.primary}
+        bgGradient={`linear(to-l, ${color.primary}, white)`}
         w='550px'
         h='600px'
         borderRadius='50px'
         position='absolute'
         right='-200px'
         transform='rotate(45deg)'
-        opacity='.6'
+        opacity='.4'
         zIndex="0"
       />
       <Flex
@@ -98,7 +98,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
           flexDir='column'
           borderRadius='.2em'
           shadow='.01em .01em .5em gray'
-          display={['none', 'none', 'block']}
+          display={['none', 'none', 'flex']}
         >
           <Avatar borderRadius='100%' backgroundColor={color.dark} w='50px' h='50px' />
           <Text
