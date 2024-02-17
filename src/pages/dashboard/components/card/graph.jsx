@@ -43,13 +43,13 @@ const Graph = ({ h, fullW, content, isCrypto }) => {
         <LineChart
           width={fullW ? 800 : 500}
           height={400}
-          data={content.map((e, i)=>{
+          data={Array.isArray(content) ? content.map((e, i)=>{
             return {
             name: e.date,
             solde: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.value)}, 0),
             crypto: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.cryptoValue)}, 0),
             }
-          })}
+          }) : <></>}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <XAxis dataKey='name' />

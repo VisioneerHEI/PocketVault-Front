@@ -31,7 +31,7 @@ const History = () => {
         paddingTop='90px'
         gap='.5em'
       >
-        <Graph h='500px' fullW />
+        <Graph h='500px' fullW content={getAllTransaction()} />
         <Card fullH display>
           <Text fontSize="2em">Normal Solde</Text>
         </Card>
