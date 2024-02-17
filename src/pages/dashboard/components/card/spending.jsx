@@ -34,7 +34,7 @@ const Spending = ({ isCrypto, content = [], fullH = false }) => {
               {transaction.date}
             </StatHelpText>
           </Stat>
-        ))}
+        )).reverse()}
       </Flex>
     </Card>
   )

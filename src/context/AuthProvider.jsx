@@ -42,7 +42,7 @@ const AuthProvider = ({ children }) => {
       return []
     }
     if (Number.isInteger(limite) && result.length >= limite){
-      return result.slice(0, limite)
+      return result.slice(result.length - limite, result.length)
     }
     return result || []
   }

@@ -15,11 +15,10 @@ import color from '../../../../utils/theme'
   { name: 'Jul', solde: 2100, crypto: 31.56 }
 ]*/
 
-const Graph = ({ h, fullW, content }) => {
-  const [view, setView] = useState(true)
+const Graph = ({ h, fullW, content, isCrypto }) => {
+  const [view, setView] = useState(!isCrypto)
 
   useEffect(() => {
-    console.log(view)
   }, [view])
 
   return (
@@ -73,6 +72,7 @@ Graph.propTypes = {
   h: PropTypes.string,
   fullW: PropTypes.bool,
   content: PropTypes.array,
+  isCrypto: PropTypes.bool,
 }
 
 export default Graph

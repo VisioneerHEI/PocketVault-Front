@@ -7,7 +7,7 @@ import Graph from './card/graph'
 import { useContext } from 'react'
 import { UserContext } from '../../../context/AuthProvider'
 
-const transactions = [
+/*const transactions = [
   {
     value: '12000',
     date: '07/02/2024'
@@ -15,7 +15,7 @@ const transactions = [
     value: '-1200',
     date: '07/02/2024'
   }
-]
+]*/
 
 const Main = () => {
   const { getAllTransaction } = useContext(UserContext)
@@ -33,13 +33,13 @@ const Main = () => {
       paddingTop='90px'
       gap='.5em'
     >
-      <Graph h='500px' content={getAllTransaction()} />
+      <Graph h='500px' content={getAllTransaction()} isCrypto />
       <Graph h='500px' content={getAllTransaction()} />
       <Card
         h='500px'
       >
         <Solde />
-        <Spending isCrypto content={transactions} />
+        <Spending isCrypto />
       </Card>
       <Card
         h='500px'
