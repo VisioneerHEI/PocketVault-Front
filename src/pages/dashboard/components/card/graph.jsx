@@ -3,6 +3,7 @@ import React, { Flex, Switch, Text } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
 import { useState, useEffect } from 'react'
+import color from '../../../../utils/theme'
 
 /*const data2 = [
   { name: 'Jan', solde: 2015, crypto: 10 },
@@ -47,6 +48,7 @@ const Graph = ({ h, fullW, content }) => {
             return {
             name: e.date,
             solde: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.value)}, 0),
+            crypto: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.cryptoValue)}, 0),
             }
           })}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -58,8 +60,8 @@ const Graph = ({ h, fullW, content }) => {
           <Legend />
           {
           view
-            ? <Line type='monotone' dataKey='solde' stroke='#82ca9d' />
-            : <Line type='monotone' dataKey='crypto' stroke='#654321' />
+            ? <Line type='monotone' dataKey='solde' stroke={color.second} />
+            : <Line type='monotone' dataKey='crypto' stroke={color.primary} />
         }
         </LineChart>
       </Flex>
