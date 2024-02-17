@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
 import { useState, useEffect } from 'react'
 
-const data = [
+/*const data2 = [
   { name: 'Jan', solde: 2015, crypto: 10 },
   { name: 'Feb', solde: 0, crypto: 100 },
   { name: 'Mar', solde: 2290, crypto: 0.1 },
@@ -12,9 +12,9 @@ const data = [
   { name: 'May', solde: 2181, crypto: 20 },
   { name: 'Jun', solde: 2500, crypto: 2 },
   { name: 'Jul', solde: 2100, crypto: 31.56 }
-]
+]*/
 
-const Graph = ({ h, fullW }) => {
+const Graph = ({ h, fullW, content }) => {
   const [view, setView] = useState(true)
 
   useEffect(() => {
@@ -43,7 +43,12 @@ const Graph = ({ h, fullW }) => {
         <LineChart
           width={fullW ? 800 : 500}
           height={400}
-          data={data}
+          data={content.map(e=>{
+            return {
+            name: e.date,
+            solde: e.value,
+            }
+          })}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         >
           <XAxis dataKey='name' />
@@ -64,7 +69,8 @@ const Graph = ({ h, fullW }) => {
 
 Graph.propTypes = {
   h: PropTypes.string,
-  fullW: PropTypes.bool
+  fullW: PropTypes.bool,
+  content: PropTypes.array,
 }
 
 export default Graph

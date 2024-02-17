@@ -4,6 +4,8 @@ import Card from './card'
 import Solde from './card/solde'
 import Spending from './card/spending'
 import Graph from './card/graph'
+import { useContext } from 'react'
+import { UserContext } from '../../../context/AuthProvider'
 
 const transactions = [
   {
@@ -16,6 +18,8 @@ const transactions = [
 ]
 
 const Main = () => {
+  const { getAllTransaction } = useContext(UserContext)
+
   return (
     <Flex
       h='100%'
@@ -29,8 +33,8 @@ const Main = () => {
       paddingTop='90px'
       gap='.5em'
     >
-      <Graph h='500px' />
-      <Graph h='500px' />
+      <Graph h='500px' content={getAllTransaction()} />
+      <Graph h='500px' content={getAllTransaction()} />
       <Card
         h='500px'
       >
@@ -40,7 +44,7 @@ const Main = () => {
       <Card
         h='500px'
       >
-        <Spending content={transactions} />
+        <Spending content={getAllTransaction(2)} />
         <Solde isCrypto />
       </Card>
     </Flex>

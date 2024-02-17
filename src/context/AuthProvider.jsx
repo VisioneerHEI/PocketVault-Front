@@ -25,15 +25,36 @@ const AuthProvider = ({ children }) => {
   }
   const addMoney = (v) => {
     st.set('solde', getSolde() + Number(v))
+    addTransaction(createTransaction(v))
     return st.get('solde')
   }
   const getBackMoney = (v) => {
     st.set('solde', getSolde() - Number(v))
+    addTransaction(createTransaction(-v))
     return st.get('solde')
+  }
+  const createTransaction = (v, date=undefined) => {
+    return {"value": v, "date": date || new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: '2-digit' })}
+  }
+  const getAllTransaction = (limite=undefined) => {
+    const result = st.get("transactions")
+    if (!Array.isArray(result)){
+      return []
+    }
+    if (Number.isInteger(limite) && result.length >= limite){
+      return result.slice(0, limite)
+    }
+    return result || []
+  }
+  const addTransaction = (value) => {
+    console.log(value);
+    const listeTransaction = getAllTransaction()
+    listeTransaction.push(value)
+    return st.set("transactions", listeTransaction)
   }
 
   return (
-    <UserContext.Provider value={{ getSolde, addMoney, getBackMoney }}>
+    <UserContext.Provider value={{ getSolde, addMoney, getBackMoney, getAllTransaction }}>
       {token.get()
         ? children
         : <LoadError />}
