@@ -7,12 +7,12 @@ import Graph from './card/graph'
 
 const transactions = [
   {
-    value: "12000",
-    date: "07/02/2024",
-  },{
-    value: "-1200",
-    date: "07/02/2024",
-  },
+    value: '12000',
+    date: '07/02/2024'
+  }, {
+    value: '-1200',
+    date: '07/02/2024'
+  }
 ]
 
 const Main = () => {
@@ -27,7 +27,7 @@ const Main = () => {
       margin='0'
       padding='0'
       paddingTop='90px'
-      gap=".5em"
+      gap='.5em'
     >
       <Graph h='500px' />
       <Graph h='500px' />
@@ -35,12 +35,13 @@ const Main = () => {
         h='500px'
       >
         <Solde />
-        <Spending isCrypto={true} content={transactions} />
+        <Spending isCrypto content={transactions} />
       </Card>
       <Card
-        h='500px'>
+        h='500px'
+      >
         <Spending content={transactions} />
-        <Solde isCrypto={true} />
+        <Solde isCrypto />
       </Card>
     </Flex>
   )

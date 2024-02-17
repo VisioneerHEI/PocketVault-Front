@@ -4,13 +4,13 @@ import PropTypes from 'prop-types'
 const Divider = ({ orientation }) => {
   return (
     <>
-      <Dv orientation={orientation=="h" ? "horizontal" : "vertical"} transform="scale(.8)" />
+      <Dv orientation={orientation == 'h' ? 'horizontal' : 'vertical'} transform='scale(.8)' />
     </>
   )
 }
 
 Divider.propTypes = {
-  orientation: PropTypes.string,
+  orientation: PropTypes.string
 }
 
 export default Divider

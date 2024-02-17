@@ -30,7 +30,7 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
         right='-200px'
         transform='rotate(45deg)'
         opacity='.4'
-        zIndex="0"
+        zIndex='0'
       />
       <Flex
         bgGradient={`linear(to-l, ${color.primary}, white)`}
@@ -41,14 +41,14 @@ const Form = ({ name, additional, inputs, reverse, error }) => {
         right='-200px'
         transform='rotate(45deg)'
         opacity='.4'
-        zIndex="0"
+        zIndex='0'
       />
       <Flex
         w={['100%', '100%', '50%']}
         h='100%'
         flexDir='column'
         alignItems='center'
-        zIndex="1"
+        zIndex='1'
       >
         <Flex
           fontFamily='cursive'

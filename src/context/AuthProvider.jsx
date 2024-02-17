@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, createContext } from 'react'
 import PropTypes from 'prop-types'
 import ErrorPage from '../pages/Error'
-import { createContext } from 'react'
+
 import * as token from '../utils/token.js'
 import * as st from '../utils/userStorage'
 
@@ -21,29 +21,28 @@ export const UserContext = createContext()
 
 const AuthProvider = ({ children }) => {
   const getSolde = () => {
-    return Number(st.get("solde")) || 0.0
-  };
+    return Number(st.get('solde')) || 0.0
+  }
   const addMoney = (v) => {
-    st.set("solde", getSolde() + Number(v))
-    return st.get("solde")
-  };
+    st.set('solde', getSolde() + Number(v))
+    return st.get('solde')
+  }
   const getBackMoney = (v) => {
-    st.set("solde", getSolde() - Number(v))
-    return st.get("solde")
-  };
+    st.set('solde', getSolde() - Number(v))
+    return st.get('solde')
+  }
 
   return (
     <UserContext.Provider value={{ getSolde, addMoney, getBackMoney }}>
-      {token.get() ?
-        children :
-        <LoadError />
-      }
+      {token.get()
+        ? children
+        : <LoadError />}
     </UserContext.Provider>
   )
 }
 
 AuthProvider.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.element
 }
 
 export default AuthProvider

@@ -13,8 +13,8 @@ import {
 } from '@chakra-ui/icons'
 import { GoGraph } from 'react-icons/go'
 import { FaBorderAll } from 'react-icons/fa'
-import { GrTransaction } from "react-icons/gr";
-import { MdHistory } from "react-icons/md";
+import { GrTransaction } from 'react-icons/gr'
+import { MdHistory } from 'react-icons/md'
 
 const LeftBar = () => {
   return (
@@ -22,7 +22,7 @@ const LeftBar = () => {
       bgColor={color.dark}
       h='100%'
       w={['10%', '10%', '20%']}
-      minW={"60px"}
+      minW='60px'
       zIndex='11'
       flexDir='column'
       justifyContent='space-between'
@@ -35,28 +35,44 @@ const LeftBar = () => {
         alignItems='center'
       >
         <Flex
-            h="3em"
-            fontSize="2em"
-            padding=".5em">
+          h='3em'
+          fontSize='2em'
+          padding='.5em'
+        >
           <Text
-            display={["none", "none", "block"]}>PocketVault</Text>
-            <HamburgerIcon
-              display={["block", "block", "none"]}/>
-          </Flex>
+            display={['none', 'none', 'block']}
+          >PocketVault
+          </Text>
+          <HamburgerIcon
+            display={['block', 'block', 'none']}
+          />
+        </Flex>
         <Divider orientation='h' />
         <DropDown toDisplay={[
-          { name: 'DashBoard', icon: <GoGraph />, content: [
-            {name:'All', redirect:"/dashboard", icon: <FaBorderAll />},
-            {name:'History', redirect:"/dashboard/history", icon: <MdHistory />},
-          ]},
-          { name: 'Transaction', icon: <GrTransaction />, content: [
-            {name:'Depot', redirect:"/transaction/depot", icon: <AddIcon />},
-            {name:'Get Money', redirect:"/transaction/retrait", icon: <MinusIcon />},
-          ]},
-          { name: 'Other', icon: <ExternalLinkIcon />, content: [
-            {name:'Contact us', redirect:"#", icon: <EmailIcon />},
-            {name:'Support', redirect:"#", icon: <PhoneIcon />},
-          ]},
+          {
+            name: 'DashBoard',
+            icon: <GoGraph />,
+            content: [
+              { name: 'All', redirect: '/dashboard', icon: <FaBorderAll /> },
+              { name: 'History', redirect: '/dashboard/history', icon: <MdHistory /> }
+            ]
+          },
+          {
+            name: 'Transaction',
+            icon: <GrTransaction />,
+            content: [
+              { name: 'Depot', redirect: '/transaction/depot', icon: <AddIcon /> },
+              { name: 'Get Money', redirect: '/transaction/retrait', icon: <MinusIcon /> }
+            ]
+          },
+          {
+            name: 'Other',
+            icon: <ExternalLinkIcon />,
+            content: [
+              { name: 'Contact us', redirect: '#', icon: <EmailIcon /> },
+              { name: 'Support', redirect: '#', icon: <PhoneIcon /> }
+            ]
+          }
         ]}
         />
       </Flex>

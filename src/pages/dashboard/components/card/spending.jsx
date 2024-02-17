@@ -3,11 +3,11 @@ import React, { Stat, StatNumber, StatLabel, StatHelpText, StatArrow, Text, Flex
 import Divider from '../../../../components/divider'
 import PropTypes from 'prop-types'
 
-const Spending = ({ isCrypto, content=[], fullH=false }) => {
+const Spending = ({ isCrypto, content = [], fullH = false }) => {
   return (
     <Card
-      display={true}
-      h={fullH ? "auto" : null}
+      display
+      h={fullH ? 'auto' : null}
     >
       <Flex
         w='100%'
@@ -20,16 +20,17 @@ const Spending = ({ isCrypto, content=[], fullH=false }) => {
           fontSize='1.25em'
           fontFamily='sans-serif'
           fontWeight='1em'
-        >Last {isCrypto ? "Crypto" : ""} Transaction
+        >Last {isCrypto ? 'Crypto' : ''} Transaction
         </Text>
         <Divider orientation='h' />
-        {content.map((transaction,i)=>(
+        {content.map((transaction, i) => (
           <Stat
-            key={`${i}transaction${Math.random()}`}>
+            key={`${i}transaction${Math.random()}`}
+          >
             <StatLabel>Transaction</StatLabel>
             <StatNumber>${Math.abs(transaction.value)}</StatNumber>
             <StatHelpText>
-              <StatArrow type={transaction.value>=0 ? 'increase' : 'decrease' } />
+              <StatArrow type={transaction.value >= 0 ? 'increase' : 'decrease'} />
               {transaction.date}
             </StatHelpText>
           </Stat>
@@ -42,7 +43,7 @@ const Spending = ({ isCrypto, content=[], fullH=false }) => {
 Spending.propTypes = {
   isCrypto: PropTypes.bool,
   content: PropTypes.array,
-  fullH: PropTypes.bool,
+  fullH: PropTypes.bool
 }
 
 export default Spending

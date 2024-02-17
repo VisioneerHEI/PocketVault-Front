@@ -13,7 +13,8 @@ const MainLayer = ({ children }) => {
       <LeftBar />
       <Flex
         w={['90%', '90%', '80%']}
-        h="100%">
+        h='100%'
+      >
         <NavBar />
         {children}
       </Flex>
@@ -22,7 +23,7 @@ const MainLayer = ({ children }) => {
 }
 
 MainLayer.propTypes = {
-    children: PropTypes.element,
+  children: PropTypes.element
 }
 
 export default MainLayer

@@ -17,39 +17,39 @@ const DropDown = ({ toDisplay }) => {
     >
       {toDisplay.map((e) => {
         return (
-          <AccordionItem key={`itemdrop${e}`} border="0" >
+          <AccordionItem key={`itemdrop${e}`} border='0'>
             <AccordionButton
               h='50px'
               justifyContent='space-between'
               bgColor='transparent'
               border='0'
-              transitionDuration="400ms"
+              transitionDuration='400ms'
               _hover={{
-                bgColor: transColor.dark(.2)
+                bgColor: transColor.dark(0.2)
               }}
             >
-              <TextIcon text={e.name} icon={e.icon}/>
-              <AccordionIcon display={["none", "none", "block"]} />
+              <TextIcon text={e.name} icon={e.icon} />
+              <AccordionIcon display={['none', 'none', 'block']} />
             </AccordionButton>
             {e.content.map(f => {
               return (
-                <AccordionPanel key={`drop${e.name}${f}`} padding="0">
+                <AccordionPanel key={`drop${e.name}${f}`} padding='0'>
                   <AccordionButton
                     h='50px'
                     justifyContent='space-between'
                     bgColor={color.light}
                     border='0'
                     onClick={() => {
-                      if (f.redirect){
+                      if (f.redirect) {
                         window.location.href = f.redirect
                       }
                     }}
-                    transitionDuration="400ms"
+                    transitionDuration='400ms'
                     _hover={{
-                      bgColor: transColor.primary(.5)
+                      bgColor: transColor.primary(0.5)
                     }}
                   >
-                    <TextIcon text={f.name} icon={f.icon}/>
+                    <TextIcon text={f.name} icon={f.icon} />
                   </AccordionButton>
                 </AccordionPanel>
               )

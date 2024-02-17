@@ -10,7 +10,7 @@ const Solde = ({ isCrypto }) => {
 
   return (
     <Card
-      display={true}
+      display
     >
       <Flex
         w='100%'
@@ -23,7 +23,7 @@ const Solde = ({ isCrypto }) => {
           fontSize='1.5em'
           fontFamily='sans-serif'
           fontWeight='1em'
-        >Solde {isCrypto ? "Crypto" : ""}
+        >Solde {isCrypto ? 'Crypto' : ''}
         </Text>
         <Divider orientation='h' />
         <Stat>
