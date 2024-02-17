@@ -15,7 +15,7 @@ const data = [
   { name: 'Jul', solde: 2100, crypto: 31.56 },
 ];
 
-const Graph = ({ h }) => {
+const Graph = ({ h, fullW }) => {
   const [view, setView] = useState(true)
 
   useEffect(()=>{
@@ -26,6 +26,7 @@ const Graph = ({ h }) => {
     <Card
       display={true}
       h={h}
+      fullW={fullW}
     >
       <Flex
         w='90%'
@@ -33,11 +34,13 @@ const Graph = ({ h }) => {
         flexDir='column'
         justifyContent='space-evenly'
         alignItems='center'
+        overflowY="hidden"
+        overflowX="auto"
       >
       <Text
         fontSize="2em">History {view ? "Solde" : "Crypto"} <Switch value={view} onChange={()=>setView(!view)} /></Text>
       <LineChart
-        width={500}
+        width={fullW ? 800 : 500}
         height={400}
         data={data}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -61,6 +64,7 @@ const Graph = ({ h }) => {
 
 Graph.propTypes = {
   h: PropTypes.string,
+  fullW: PropTypes.bool,
 }
 
 export default Graph

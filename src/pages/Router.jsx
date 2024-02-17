@@ -12,6 +12,7 @@ import Transaction from './transaction'
 import Depot from './transaction/components/Depot'
 import Retrait from './transaction/components/Retrait'
 import AuthProvider from '../context/AuthProvider'
+import History from './History'
 
 const LoadPage = ({ url }) => {
   useEffect(() => {
@@ -50,6 +51,7 @@ const Router = () => {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/dashboard' element={<AuthProvider><Dashboard /></AuthProvider>}/>
+          <Route path='/dashboard/history' element={<AuthProvider><History /></AuthProvider>}/>
           <Route path='/transaction/depot'element={<AuthProvider>
             <Transaction page={<Depot />} />
           </AuthProvider>} />

@@ -5,6 +5,16 @@ import Solde from './card/solde'
 import Spending from './card/spending'
 import Graph from './card/graph'
 
+const transactions = [
+  {
+    value: "12000",
+    date: "07/02/2024",
+  },{
+    value: "-1200",
+    date: "07/02/2024",
+  },
+]
+
 const Main = () => {
   return (
     <Flex
@@ -25,11 +35,11 @@ const Main = () => {
         h='500px'
       >
         <Solde />
-        <Spending isCrypto={true} />
+        <Spending isCrypto={true} content={transactions} />
       </Card>
       <Card
         h='500px'>
-        <Spending />
+        <Spending content={transactions} />
         <Solde isCrypto={true} />
       </Card>
     </Flex>

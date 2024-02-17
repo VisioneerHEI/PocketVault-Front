@@ -13,6 +13,8 @@ import {
 } from '@chakra-ui/icons'
 import { GoGraph } from 'react-icons/go'
 import { FaBorderAll } from 'react-icons/fa'
+import { GrTransaction } from "react-icons/gr";
+import { MdHistory } from "react-icons/md";
 
 const LeftBar = () => {
   return (
@@ -45,6 +47,9 @@ const LeftBar = () => {
         <DropDown toDisplay={[
           { name: 'DashBoard', icon: <GoGraph />, content: [
             {name:'All', redirect:"/dashboard", icon: <FaBorderAll />},
+            {name:'History', redirect:"/dashboard/history", icon: <MdHistory />},
+          ]},
+          { name: 'Transaction', icon: <GrTransaction />, content: [
             {name:'Depot', redirect:"/transaction/depot", icon: <AddIcon />},
             {name:'Get Money', redirect:"/transaction/retrait", icon: <MinusIcon />},
           ]},
