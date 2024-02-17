@@ -1,22 +1,16 @@
-import React, { Flex } from '@chakra-ui/react'
+import React, { Divider as Dv } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 
-const Divider = ({ orientation, light }) => {
+const Divider = ({ orientation }) => {
   return (
     <>
-      {orientation === 'h' || (orientation && orientation !== 'v')
-        ? <Flex h='1px' w='80%' bgColor={light ? 'gray' : 'darkgray'} />
-        : <></>}
-      {orientation === 'v'
-        ? <Flex w='1px' h='80%' bgColor={light ? 'gray' : 'darkgray'} />
-        : <></>}
+      <Dv orientation={orientation == 'h' ? 'horizontal' : 'vertical'} transform='scale(.8)' />
     </>
   )
 }
 
 Divider.propTypes = {
-  orientation: PropTypes.string,
-  light: PropTypes.bool
+  orientation: PropTypes.string
 }
 
 export default Divider

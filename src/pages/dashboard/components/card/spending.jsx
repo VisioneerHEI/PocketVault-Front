@@ -1,11 +1,13 @@
 import Card from '.'
 import React, { Stat, StatNumber, StatLabel, StatHelpText, StatArrow, Text, Flex } from '@chakra-ui/react'
 import Divider from '../../../../components/divider'
+import PropTypes from 'prop-types'
 
-const Spending = () => {
+const Spending = ({ isCrypto, content = [], fullH = false }) => {
   return (
     <Card
-      display='t'
+      display
+      h={fullH ? 'auto' : null}
     >
       <Flex
         w='100%'
@@ -15,31 +17,33 @@ const Spending = () => {
         alignItems='center'
       >
         <Text
-          fontSize='larger'
+          fontSize='1.25em'
           fontFamily='sans-serif'
           fontWeight='1em'
-        >Last Transaction
+        >Last {isCrypto ? 'Crypto' : ''} Transaction
         </Text>
         <Divider orientation='h' />
-        <Stat>
-          <StatLabel>Transaction</StatLabel>
-          <StatNumber>$12.000.00</StatNumber>
-          <StatHelpText>
-            <StatArrow type='increase' />
-            07/02/2024
-          </StatHelpText>
-        </Stat>
-        <Stat>
-          <StatLabel>Transaction</StatLabel>
-          <StatNumber>$120.00</StatNumber>
-          <StatHelpText>
-            <StatArrow type='decrease' />
-            17/02/2024
-          </StatHelpText>
-        </Stat>
+        {content.map((transaction, i) => (
+          <Stat
+            key={`${i}transaction${Math.random()}`}
+          >
+            <StatLabel>Transaction</StatLabel>
+            <StatNumber>${Math.abs(transaction.value)}</StatNumber>
+            <StatHelpText>
+              <StatArrow type={transaction.value >= 0 ? 'increase' : 'decrease'} />
+              {transaction.date}
+            </StatHelpText>
+          </Stat>
+        )).reverse()}
       </Flex>
     </Card>
   )
+}
+
+Spending.propTypes = {
+  isCrypto: PropTypes.bool,
+  content: PropTypes.array,
+  fullH: PropTypes.bool
 }
 
 export default Spending

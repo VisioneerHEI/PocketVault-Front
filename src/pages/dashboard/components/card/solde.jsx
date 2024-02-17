@@ -1,11 +1,16 @@
 import Card from '.'
 import React, { Stat, StatNumber, StatLabel, Text, Flex } from '@chakra-ui/react'
 import Divider from '../../../../components/divider'
+import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import { UserContext } from '../../../../context/AuthProvider'
 
-const Solde = () => {
+const Solde = ({ isCrypto }) => {
+  const { getSolde } = useContext(UserContext)
+
   return (
     <Card
-      display='t'
+      display
     >
       <Flex
         w='100%'
@@ -15,19 +20,23 @@ const Solde = () => {
         alignItems='center'
       >
         <Text
-          fontSize='larger'
+          fontSize='1.5em'
           fontFamily='sans-serif'
           fontWeight='1em'
-        >Solde
+        >Solde {isCrypto ? 'Crypto' : ''}
         </Text>
         <Divider orientation='h' />
         <Stat>
           <StatLabel>Total in account</StatLabel>
-          <StatNumber>$12.000.00</StatNumber>
+          <StatNumber>${getSolde()}</StatNumber>
         </Stat>
       </Flex>
     </Card>
   )
+}
+
+Solde.propTypes = {
+  isCrypto: PropTypes.bool
 }
 
 export default Solde

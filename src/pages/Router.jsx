@@ -4,11 +4,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import ErrorPage from './Error'
 import Login from './login'
 import SignUp from './signup'
-import NeedTokenPage from '../components/needTokenPage'
 import PropTypes from 'prop-types'
 
 import * as token from '../utils/token.js'
 import Dashboard from './dashboard'
+import Transaction from './transaction'
+import Depot from './transaction/components/Depot'
+import Retrait from './transaction/components/Retrait'
+import AuthProvider from '../context/AuthProvider'
+import History from './History'
 
 const LoadPage = ({ url }) => {
   useEffect(() => {
@@ -46,10 +50,17 @@ const Router = () => {
           />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
+          <Route path='/dashboard' element={<AuthProvider><Dashboard /></AuthProvider>} />
+          <Route path='/dashboard/history' element={<AuthProvider><History /></AuthProvider>} />
           <Route
-            path='/dashboard' element={
-              <NeedTokenPage Page={<Dashboard />} token={token.get()} />
-                    }
+            path='/transaction/depot'element={<AuthProvider>
+              <Transaction page={<Depot />} />
+            </AuthProvider>}
+          />
+          <Route
+            path='/transaction/retrait'element={<AuthProvider>
+              <Transaction page={<Retrait />} />
+            </AuthProvider>}
           />
           <Route path='*' element={<ErrorPage errorCode={error} />} />
         </Routes>

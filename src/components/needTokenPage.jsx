@@ -14,12 +14,12 @@ const LoadError = () => {
   )
 }
 
-const NeedTokenPage = ({ Page, token }) => {
+const NeedTokenPage = ({ children, token }) => {
   return (
     <>
       {
                 token
-                  ? Page
+                  ? children
                   : <LoadError />
             }
     </>
@@ -27,7 +27,7 @@ const NeedTokenPage = ({ Page, token }) => {
 }
 
 NeedTokenPage.propTypes = {
-  Page: PropTypes.element,
+  children: PropTypes.element,
   token: PropTypes.string
 }
 

@@ -12,9 +12,9 @@ const Button = (props) => {
       bgColor={color.second}
       border='0'
       borderRadius='1em'
-      transitionDuration="400ms"
+      transitionDuration='400ms'
       _hover={{
-        bgColor: transColor.second(.5)
+        bgColor: transColor.second(0.5)
       }}
     />
   )

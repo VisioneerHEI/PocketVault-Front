@@ -3,11 +3,11 @@ import { Flex } from '@chakra-ui/react'
 import PropTypes from 'prop-types'
 import color from '../../../../utils/theme.js'
 
-const Card = ({ h, children, display }) => {
+const Card = ({ h, children, display, fullW }) => {
   return (
     <Flex
       h={h || '49%'}
-      w='49%'
+      w={fullW ? ['100%', '100%', '90%'] : ['100%', '100%', '49%']}
       border='0 solid'
       borderRadius='1em'
       wrap='wrap'
@@ -26,7 +26,8 @@ const Card = ({ h, children, display }) => {
 Card.propTypes = {
   h: PropTypes.string,
   children: PropTypes.element,
-  display: PropTypes.bool
+  display: PropTypes.bool,
+  fullW: PropTypes.bool
 }
 
 export default Card
