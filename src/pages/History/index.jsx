@@ -1,18 +1,17 @@
-import { Flex, Text } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import React from 'react'
 import { useContext } from 'react'
 import MainLayer from '../../components/MainLayer'
 import { UserContext } from '../../context/AuthProvider'
-import Card from '../dashboard/components/card'
 import Graph from '../dashboard/components/card/graph'
-import Spending from '../dashboard/components/card/spending'
+import ListTransaction from './components/listTransaction'
 
-const transactions = [
+/*const transactions = [
   {
     value: 5000000,
     date: '01/01/2023'
   },
-]
+]*/
 
 const History = () => {
   const { getAllTransaction } = useContext(UserContext)
@@ -32,14 +31,7 @@ const History = () => {
         gap='.5em'
       >
         <Graph h='500px' fullW content={getAllTransaction()} />
-        <Card fullH display>
-          <Text fontSize="2em">Normal Solde</Text>
-        </Card>
-        <Spending fullH content={getAllTransaction()} />
-        <Card fullH display>
-          <Text fontSize="2em">Crypto Solde</Text>
-        </Card>
-        <Spending isCrypto fullH content={transactions} />
+        <ListTransaction content={getAllTransaction()} />
       </Flex>
     </MainLayer>
   )
