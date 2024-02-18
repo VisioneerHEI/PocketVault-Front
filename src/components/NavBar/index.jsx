@@ -39,7 +39,7 @@ const NavBar = () => {
             token.dump()
             window.location.href = '/login'
           }}
-        ><TextIcon text='Log Out' icon={<CiLogout />} />
+        ><TextIcon text='Logout' icon={<CiLogout />} />
         </Button>
         <Divider orientation='v' light />
         <Avatar />

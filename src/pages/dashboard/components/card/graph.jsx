@@ -59,8 +59,8 @@ const Graph = ({ h, fullW, content, isCrypto }) => {
           <Legend />
           {
           view
-            ? <Line type='monotone' dataKey='solde' stroke={color.second} />
-            : <Line type='monotone' dataKey='crypto' stroke={color.primary} />
+            ? <Line type='monotone' dataKey='solde' stroke={color.dark} />
+            : <Line type='monotone' dataKey='crypto' stroke={color.red} />
         }
         </LineChart>
       </Flex>

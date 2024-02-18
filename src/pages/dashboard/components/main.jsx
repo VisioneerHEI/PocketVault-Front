@@ -40,13 +40,16 @@ const Main = () => {
         h='500px'
       >
         <Solde />
-        <Spending isCrypto />
+        <Card />
+        <Card display />
+        <Spending content={getAllTransaction(2)} />
       </Card>
       <Card
-        h='500px'
-      >
-        <Spending content={getAllTransaction(2)} />
+        h="500px">
+        <Card />
         <Solde isCrypto />
+        <Spending isCrypto />
+        <Card display />
       </Card>
     </Flex>
   )
