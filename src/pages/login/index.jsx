@@ -28,7 +28,7 @@ const Login = () => {
         inputs={
           <>
             <InputForm placeholder='Email or UserName' onChange={modifyAccount} />
-            <InputForm placeholder='Password' onChange={modifyPassword} />
+            <InputForm placeholder='Password' onChange={modifyPassword} isPassword />
             <FormButton
               value='Login'
               backgroundColor='cyan'
