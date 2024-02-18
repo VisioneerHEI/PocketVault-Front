@@ -16,7 +16,7 @@ const Card = ({ h, children, display, fullW }) => {
       margin='0'
       padding='0'
       opacity={display ? '.9' : '1'}
-      bgColor={display ? color.dark : ''}
+      bgColor={display ? color.primary : ''}
     >
       {children}
     </Flex>

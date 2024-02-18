@@ -5,17 +5,8 @@ import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'r
 import { useState, useEffect } from 'react'
 import color from '../../../../utils/theme'
 
-/*const data2 = [
-  { name: 'Jan', solde: 2015, crypto: 10 },
-  { name: 'Feb', solde: 0, crypto: 100 },
-  { name: 'Mar', solde: 2290, crypto: 0.1 },
-  { name: 'Apr', solde: 2000, crypto: 50 },
-  { name: 'May', solde: 2181, crypto: 20 },
-  { name: 'Jun', solde: 2500, crypto: 2 },
-  { name: 'Jul', solde: 2100, crypto: 31.56 }
-]*/
 
-const Graph = ({ h, fullW, content, isCrypto }) => {
+const TransactionCard = ({ h, fullW, content, isCrypto }) => {
   const [view, setView] = useState(!isCrypto)
 
   useEffect(() => {
@@ -38,16 +29,16 @@ const Graph = ({ h, fullW, content, isCrypto }) => {
       >
         <Text
           fontSize='2em'
-        >History {view ? 'Solde' : 'Crypto'} <Switch value={view} onChange={() => setView(!view)} />
+        >{view ? '' : 'Crypto'} Transactions <Switch value={view} onChange={() => setView(!view)} />
         </Text>
         <LineChart
           width={fullW ? 800 : 500}
           height={400}
-          data={Array.isArray(content) ? content.map((e, i)=>{
+          data={Array.isArray(content) ? content.map(e=>{
             return {
             name: e.date,
-            solde: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.value)}, 0),
-            crypto: content.slice(0, i+1).reduce((a,b)=>{return a+Number(b.cryptoValue)}, 0),
+            solde: e.value,
+            crypto: e.cryptoValue,
             }
           }) : <></>}
           margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
@@ -60,7 +51,7 @@ const Graph = ({ h, fullW, content, isCrypto }) => {
           {
           view
             ? <Line type='monotone' dataKey='solde' stroke={color.dark} />
-            : <Line type='monotone' dataKey='crypto' stroke={color.red} />
+            : <Line type='monotone' dataKey='crypto' stroke={color.light} />
         }
         </LineChart>
       </Flex>
@@ -68,11 +59,11 @@ const Graph = ({ h, fullW, content, isCrypto }) => {
   )
 }
 
-Graph.propTypes = {
+TransactionCard.propTypes = {
   h: PropTypes.string,
   fullW: PropTypes.bool,
   content: PropTypes.array,
   isCrypto: PropTypes.bool,
 }
 
-export default Graph
+export default TransactionCard

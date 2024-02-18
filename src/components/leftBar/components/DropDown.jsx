@@ -19,7 +19,7 @@ const DropDown = ({ toDisplay }) => {
         return (
           <AccordionItem key={`itemdrop${e}`} border='0'>
             <AccordionButton
-              h='50px'
+              h='4em'
               justifyContent='space-between'
               bgColor='transparent'
               border='0'
@@ -35,7 +35,7 @@ const DropDown = ({ toDisplay }) => {
               return (
                 <AccordionPanel key={`drop${e.name}${f}`} padding='0'>
                   <AccordionButton
-                    h='50px'
+                    h='4em'
                     justifyContent='space-between'
                     bgColor={color.light}
                     border='0'

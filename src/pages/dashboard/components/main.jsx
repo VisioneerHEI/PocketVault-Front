@@ -6,6 +6,7 @@ import Spending from './card/spending'
 import Graph from './card/graph'
 import { useContext } from 'react'
 import { UserContext } from '../../../context/AuthProvider'
+import TransactionCard from './card/transactionCard'
 
 /*const transactions = [
   {
@@ -33,19 +34,22 @@ const Main = () => {
       paddingTop='90px'
       gap='.5em'
     >
-      <Graph h='500px' content={getAllTransaction()} isCrypto />
+      <TransactionCard h='500px' content={getAllTransaction()} />
       <Graph h='500px' content={getAllTransaction()} />
       <Card
         h='500px'
       >
         <Solde />
-        <Spending isCrypto />
+        <Card />
+        <Card display />
+        <Spending content={getAllTransaction(2)} />
       </Card>
       <Card
-        h='500px'
-      >
-        <Spending content={getAllTransaction(2)} />
+        h="500px">
+        <Card />
         <Solde isCrypto />
+        <Spending isCrypto />
+        <Card display />
       </Card>
     </Flex>
   )
