@@ -7,9 +7,6 @@ import {
   HamburgerIcon,
   AddIcon,
   MinusIcon,
-  PhoneIcon,
-  EmailIcon,
-  ExternalLinkIcon
 } from '@chakra-ui/icons'
 import { GoGraph } from 'react-icons/go'
 import { FaBorderAll } from 'react-icons/fa'
@@ -65,14 +62,6 @@ const LeftBar = () => {
               { name: 'Get Money', redirect: '/transaction/retrait', icon: <MinusIcon /> }
             ]
           },
-          {
-            name: 'Other',
-            icon: <ExternalLinkIcon />,
-            content: [
-              { name: 'Contact us', redirect: '#', icon: <EmailIcon /> },
-              { name: 'Support', redirect: '#', icon: <PhoneIcon /> }
-            ]
-          }
         ]}
         />
       </Flex>
