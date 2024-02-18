@@ -3,6 +3,7 @@ import React from 'react'
 import LeftBar from '../leftBar'
 import NavBar from '../NavBar'
 import PropTypes from 'prop-types'
+import Footer from '../Footer'
 
 const MainLayer = ({ children }) => {
   return (
@@ -14,9 +15,11 @@ const MainLayer = ({ children }) => {
       <Flex
         w={['90%', '90%', '80%']}
         h='100%'
+        flexDir="column"
       >
         <NavBar />
         {children}
+        <Footer />
       </Flex>
     </Flex>
   )
