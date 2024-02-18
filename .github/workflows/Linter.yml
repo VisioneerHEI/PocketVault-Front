@@ -3,10 +3,15 @@ name: Super-Linter
 
 on:  # yamllint disable-line rule:truthy
   push:
-    branches: [ prod, preprod ]
+    branches: [prod, preprod]
   pull_request:
-    branches: [ prod, preprod ]
-permissions: read-all
+    branches: [prod, preprod]
+    
+permissions:
+  actions: read
+  checks: read
+  # To report GitHub Actions status checks
+  statuses: write
 
 jobs:
   build:
@@ -15,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.1.1
         with:
           # super-linter needs the full git history to get the
           # list of files that changed across commits
@@ -24,6 +29,6 @@ jobs:
       - name: Super-linter
         uses: super-linter/super-linter@v6.0.0  # x-release-please-version
         env:
-          DEFAULT_BRANCH: prod
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
